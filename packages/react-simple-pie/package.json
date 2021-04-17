@@ -1,0 +1,16 @@
+{
+  "name": "react-simple-pie",
+  "version": "1.0.0",
+  "description": "Super light weight and super simple svg pie diagram react component",
+  "repository": "serjilyashenko/react-simple-pie",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config",
+    "lint": "eslint modules"
+  },
+  "author": "Serge Ilyashenko <serj.ilyashenko@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^2.45.2"
+  }
+}
