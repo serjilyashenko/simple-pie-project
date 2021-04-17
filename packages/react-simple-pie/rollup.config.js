@@ -1,3 +1,5 @@
+import json from "@rollup/plugin-json";
+
 let config;
 
 config = {
@@ -6,6 +8,7 @@ config = {
     file: "bundle.js",
     format: "cjs",
   },
+  plugins: [json()],
 };
 
 module.exports = config;
