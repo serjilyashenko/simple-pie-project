@@ -1,14 +1,29 @@
 import json from "@rollup/plugin-json";
+const { uglify } = require("rollup-plugin-uglify");
 
-let config;
+const pkg = require("./package.json");
 
-config = {
-  input: "modules/index.js",
-  output: {
-    file: "bundle.js",
-    format: "cjs",
+let cjs;
+
+cjs = [
+  {
+    input: "modules/index.js",
+    output: {
+      file: `cjs/${pkg.name}.js`,
+      sourcemap: true,
+      format: "cjs",
+    },
+    plugins: [json()],
   },
-  plugins: [json()],
-};
+  {
+    input: "modules/index.js",
+    output: {
+      file: `cjs/${pkg.name}.min.js`,
+      sourcemap: true,
+      format: "cjs",
+    },
+    plugins: [json(), uglify()],
+  },
+];
 
-module.exports = config;
+module.exports = cjs;
