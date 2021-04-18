@@ -11,8 +11,9 @@ npm install react-simple-pie
 ```
 
 ### Use
+
 ```js
-import SVGPie from 'simple-pie';
+import SVGPie from "simple-pie";
 
 // will appear soon
 ```

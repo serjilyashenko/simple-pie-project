@@ -11,24 +11,27 @@ npm install simple-pie
 ```
 
 ### Use with ES5 import:
+
 ```js
-import SVGPie from 'simple-pie';
+import SVGPie from "simple-pie";
 
 // will appear soon
 ```
 
 ### Use in NodeJs:
+
 ```js
-const SVGPie = require('simple-pie');
+const SVGPie = require("simple-pie");
 ```
 
 ### Use in a browser:
+
 ```html
 <div id="container"></div>
 
-<script src="node_modules/simple-pie/index.js"></script>
+<script src="node_modules/simple-pie/index.ts"></script>
 <script>
-    const svgElement = new  SVGPie([2, 1, 1, 2]);
-    document.getElementById('container').appendChild(svgElement);
+  const svgElement = new SVGPie([2, 1, 1, 2]);
+  document.getElementById("container").appendChild(svgElement);
 </script>
 ```

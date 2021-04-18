@@ -9,6 +9,9 @@
     "build": "rollup --config",
     "lint": "eslint modules"
   },
+  "peerDependencies": {
+    "react": ">=15"
+  },
   "author": "Serge Ilyashenko <serj.ilyashenko@gmail.com>",
   "license": "MIT"
 }
