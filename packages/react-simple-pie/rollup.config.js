@@ -1,5 +1,5 @@
-const rollupTypescript = require("@rollup/plugin-typescript");
-const { uglify } = require("rollup-plugin-uglify");
+import typescript from "rollup-plugin-typescript2";
+import { uglify } from "rollup-plugin-uglify";
 
 const pkg = require("./package.json");
 
@@ -8,17 +8,17 @@ let cjs;
 cjs = [
   {
     input: "modules/index.ts",
-    output: {
-      file: `cjs/${pkg.name}.js`,
-      sourcemap: true,
-      format: "cjs",
-    },
+    output: [
+      {
+        file: `cjs/${pkg.name}.js`,
+        sourcemap: true,
+        format: "cjs",
+      },
+    ],
     plugins: [
-      rollupTypescript({
-        allowSyntheticDefaultImports: true,
-        rootDir: "modules",
-        jsx: "react",
-        sourceMap: true,
+      typescript({
+        rollupCommonJSResolveHack: false,
+        clean: true,
       }),
     ],
     external: ["react", "react-dom"],
@@ -31,11 +31,9 @@ cjs = [
       format: "cjs",
     },
     plugins: [
-      rollupTypescript({
-        allowSyntheticDefaultImports: true,
-        rootDir: "modules",
-        jsx: "react",
-        sourceMap: true,
+      typescript({
+        rollupCommonJSResolveHack: false,
+        clean: true,
       }),
       uglify(),
     ],
@@ -43,4 +41,4 @@ cjs = [
   },
 ];
 
-module.exports = cjs;
+export default cjs;

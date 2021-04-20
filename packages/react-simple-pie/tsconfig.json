@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": ["modules"],
+  "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js"]
+}
