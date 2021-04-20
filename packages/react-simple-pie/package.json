@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Super light weight and super simple svg pie diagram react component",
   "repository": "serjilyashenko/react-simple-pie",
-  "main": "index.js",
-  "module": "esm/react-simple-pie.js",
+  "main": "cjs/SimplePie.min.js",
+  "types": "cjs/SimplePie.d.ts",
   "scripts": {
     "build": "rollup --config",
     "lint": "eslint modules"

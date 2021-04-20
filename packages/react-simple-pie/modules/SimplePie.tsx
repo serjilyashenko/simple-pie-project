@@ -2,13 +2,13 @@ import React from "react";
 import { Sector, TSectorCoordinate } from "./Sector";
 import { defaultPalette, PI } from "./const";
 
-type PropsType = {
+type TSimplePieProps = {
   values: number[];
   palette?: string[];
   borderColor?: string;
 };
 
-export function SimplePie(props: PropsType): JSX.Element {
+export function SimplePie(props: TSimplePieProps): JSX.Element {
   const { values, palette = defaultPalette, borderColor = "black" } = props;
 
   const _values: number[] = values || new Array(palette.length).fill(1);

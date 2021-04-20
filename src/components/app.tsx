@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SimplePie } from "./simple-pie/simple-pie";
+import { SimplePie } from "react-simple-pie";
 import "./app.css";
 
 export function App(): JSX.Element {
