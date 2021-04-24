@@ -35,3 +35,5 @@ export function SimplePie(props: TSimplePieProps): JSX.Element {
     </svg>
   );
 }
+
+export { Sector, TSectorCoordinate };

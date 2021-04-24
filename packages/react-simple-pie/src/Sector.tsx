@@ -6,12 +6,12 @@ const radius = 50;
 
 export type TSectorCoordinate = [number, number];
 
-type PropsType = {
+type TSectorProps = {
   coordinate: TSectorCoordinate;
   color: string;
 };
 
-export function Sector(props: PropsType): JSX.Element {
+export function Sector(props: TSectorProps): JSX.Element {
   const { coordinate, color } = props;
   const [radAngle0, radAngleDiff] = coordinate;
 

@@ -1,13 +1,15 @@
 {
   "name": "react-simple-pie",
-  "version": "1.0.0",
+  "version": "1.0.16",
+  "private": false,
   "description": "Super light weight and super simple svg pie diagram react component",
   "repository": "serjilyashenko/react-simple-pie",
-  "main": "cjs/SimplePie.min.js",
-  "types": "cjs/SimplePie.d.ts",
+  "main": "dist/SimplePie.min.js",
+  "types": "dist/SimplePie.d.ts",
   "scripts": {
-    "build": "rollup --config",
-    "lint": "eslint modules"
+    "build": "rm -rf dist && rollup --config",
+    "npm:publish": "npm version patch && npm publish",
+    "lint": "eslint src"
   },
   "peerDependencies": {
     "react": ">=15"
