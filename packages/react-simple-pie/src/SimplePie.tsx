@@ -1,6 +1,10 @@
 import React from "react";
-import { Sector, TSectorCoordinate } from "./Sector";
-import { defaultPalette, PI } from "./const";
+import {
+  castValuesToAngles,
+  defaultPalette,
+  TSectorCoordinate,
+} from "simple-pie";
+import { Sector } from "./Sector";
 
 type TSimplePieProps = {
   values: number[];
@@ -11,17 +15,7 @@ type TSimplePieProps = {
 export function SimplePie(props: TSimplePieProps): JSX.Element {
   const { values, palette = defaultPalette, borderColor = "black" } = props;
 
-  const _values: number[] = values || new Array(palette.length).fill(1);
-  const sum: number = _values.reduce((s, x) => Number(s) + Number(x), 0);
-  const angleDiffList: number[] = _values.map((v) => (2 * PI * v) / sum);
-
-  const angleCoordinates: TSectorCoordinate[] = [];
-  let anglePosition: number = 0;
-  for (let i in angleDiffList) {
-    const angleDiff: number = angleDiffList[i];
-    angleCoordinates.push([anglePosition, angleDiff]);
-    anglePosition += Number(angleDiff);
-  }
+  const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(values);
 
   return (
     <svg viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">

@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+    "strict": 0,
+    "import/no-anonymous-default-export": 0
+  }
+}

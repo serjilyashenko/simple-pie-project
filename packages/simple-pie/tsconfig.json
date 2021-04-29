@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "exclude": ["node_modules", "build", "dist", "example", "cjs", "rollup.config.js"]
+}

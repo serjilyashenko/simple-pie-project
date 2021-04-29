@@ -1,0 +1,15 @@
+{
+  "name": "simple-pie",
+  "version": "1.0.1",
+  "private": false,
+  "description": "Super light weight and super simple svg pie diagram",
+  "main": "dist/simple-pie.min.js",
+  "types": "dist/simple-pie.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && rollup --config",
+    "npm:publish": "npm version patch && npm publish",
+    "lint": "eslint src"
+  },
+  "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
+  "license": "MIT"
+}
