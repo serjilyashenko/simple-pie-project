@@ -49,8 +49,13 @@ export function simplePieElement(
 const isBrowser =
   typeof window === "object" && window && window.Object === Object;
 
+declare global {
+  interface Window {
+    simplePie: typeof simplePieElement | undefined;
+  }
+}
+
 if (isBrowser) {
-  /* @ts-ignore */
   window.simplePie = simplePieElement;
 }
 

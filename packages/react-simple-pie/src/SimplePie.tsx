@@ -22,7 +22,11 @@ export function SimplePie(props: TSimplePieProps): JSX.Element {
       <g stroke={borderColor} strokeWidth="2px" fill="transparent">
         {angleCoordinates.map(
           (coordinate: TSectorCoordinate, index: number): JSX.Element => (
-            <Sector coordinate={coordinate} color={palette[index]} />
+            <Sector
+              key={index}
+              coordinate={coordinate}
+              color={palette[index]}
+            />
           )
         )}
       </g>
