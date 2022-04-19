@@ -4,5 +4,7 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
   },
-  "exclude": ["node_modules", "build", "dist", "example", "cjs", "rollup.config.js"]
+  "exclude": ["node_modules", "build", "dist", "example", "cjs",
+    "rollup.config.js"
+  ]
 }

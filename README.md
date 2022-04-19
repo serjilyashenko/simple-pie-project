@@ -14,35 +14,35 @@ npm install react-simple-pie
 import SVGPie from "react-simple-pie";
 ```
 
-### Development
-The code is in packages folder:
+## Development
+```bash
+  npm install
+  cd /packages/react-simple-pie
+  npm install
+  cd ../simple-pie
+  cd ../..
+  npm start
+```
+
+**Important:** The code is in packages folder:
 * simple-pie - package
 * react-simple-pie - package
 
-**Important:** package-lock.json includes the next:
+Main project imports their sources as it.
+`package.json` files in packages are necessary only for build and publish packages to npm.
 
-```json
-    "node_modules/react-simple-pie": {
-      "resolved": "packages/react-simple-pie",
-      "link": true
-    },
-```
+**Note:** Be careful. main project `react-simple-pie` and `package/react-simple-pie` have the similar name.
 
-That means the local version of `packages/react-simple-pie` instead of npm package.
-It replaces npm module in node_modules with the local `packages/react-simple-pie` folder.
-This is npm linking mechanism 
-
-So to start the project in development mode do the next:
+## Publish npm packages
 
 ```bash
-cd packages/react-simple-pie/
-npm i
-# build react-simple-pie package
+cd packages/simple-pie
 npm run build
-# return back to main project
-cd ../..
-npm i
-npm start
+npm run npm:publish
 ```
 
-Then to see changes of `packages/react-simple-pie` you should rebuild package.
+```bash
+cd packages/react-simple-pie
+npm run build
+npm run npm:publish
+```

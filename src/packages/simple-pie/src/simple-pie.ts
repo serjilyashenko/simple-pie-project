@@ -1,11 +1,8 @@
 import { defaultPalette } from "./const";
-import {
-  castValuesToAngles,
-  sectorPathFactory,
-  TSectorCoordinate,
-} from "./sector-path";
+import { castValuesToAngles, sectorPathFactory } from "./sector-path";
+import type { TSectorCoordinate } from "./type";
 
-function svgWrapperFactory(element, borderColor = "black") {
+function svgWrapperFactory(element: string, borderColor = "black") {
   return `
         <svg viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
             <g stroke="${borderColor}" stroke-width="2px" fill="transparent">
@@ -15,14 +12,14 @@ function svgWrapperFactory(element, borderColor = "black") {
   `;
 }
 
-function svgSectorFactory(coordinate: TSectorCoordinate, color) {
+function svgSectorFactory(coordinate: TSectorCoordinate, color: string) {
   const d: string = sectorPathFactory(coordinate);
 
   return `<path fill="${color}" d="${d}"/>`;
 }
 
 export function simplePieElement(
-  values,
+  values: number[],
   pallet = defaultPalette,
   borderColor = "black"
 ) {

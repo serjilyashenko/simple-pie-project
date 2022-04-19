@@ -24,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # packages
-/packages/*/dist/
-/packages/*/cjs/
-/packages/*/esm/
-/packages/*/umd/
+/src/packages/*/dist/
+/src/packages/*/cjs/
+/src/packages/*/esm/
+/src/packages/*/umd/

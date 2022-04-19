@@ -1,8 +1,7 @@
+import { TSectorCoordinate } from "./type";
 import { PI } from "./const";
 
 const radius = 50;
-
-export type TSectorCoordinate = [number, number];
 
 export function sectorPathFactory(coordinate: TSectorCoordinate): string {
   const [radAngle0, radAngleDiff] = coordinate;
