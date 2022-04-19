@@ -17,10 +17,10 @@ import SVGPie from "react-simple-pie";
 ## Development
 ```bash
   npm install
-  cd /packages/react-simple-pie
+  cd src/packages/react-simple-pie
   npm install
   cd ../simple-pie
-  cd ../..
+  cd ../../..
   npm start
 ```
 
@@ -31,18 +31,18 @@ import SVGPie from "react-simple-pie";
 Main project imports their sources as it.
 `package.json` files in packages are necessary only for build and publish packages to npm.
 
-**Note:** Be careful. main project `react-simple-pie` and `package/react-simple-pie` have the similar name.
+**Note:** Be careful. main project `react-simple-pie` and `src/package/react-simple-pie` have the similar name.
 
 ## Publish npm packages
 
 ```bash
-cd packages/simple-pie
+cd src/packages/simple-pie
 npm run build
 npm run npm:publish
 ```
 
 ```bash
-cd packages/react-simple-pie
+cd src/packages/react-simple-pie
 npm run build
 npm run npm:publish
 ```
