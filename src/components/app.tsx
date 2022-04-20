@@ -1,16 +1,28 @@
 import React, { useEffect, useRef } from "react";
 
 // import { SimplePie } from "../packages/react-simple-pie/src/SimplePie";
-import { simplePieElement } from "../packages/simple-pie/src/simple-pie";
+import {
+  simplePieElement,
+  defaultPalette,
+} from "../packages/simple-pie/src/simple-pie";
 import "./app.css";
 
 export function App(): JSX.Element {
-  const elementRef = useRef<HTMLDivElement>(null);
+  const borderedPieRef = useRef<HTMLDivElement>(null);
+  const borderLessPieRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (elementRef.current) {
+    if (borderedPieRef.current) {
       const svgElement = simplePieElement([2, 1, 1, 2]);
-      elementRef.current.appendChild(svgElement);
+      borderedPieRef.current.appendChild(svgElement);
+    }
+    if (borderLessPieRef.current) {
+      const svgElement = simplePieElement(
+        [2, 1, 1, 2],
+        defaultPalette,
+        "transparent"
+      );
+      borderLessPieRef.current.appendChild(svgElement);
     }
   });
 
@@ -21,7 +33,10 @@ export function App(): JSX.Element {
         <div className="simple-pie-container">
           {/*<SimplePie values={[1, 2, 1, 2]} />*/}
           {/*<SimplePie values={[1, 1, 1]} />*/}
-          <div ref={elementRef} />
+          <div className="row">
+            <div ref={borderedPieRef} />
+            <div ref={borderLessPieRef} />
+          </div>
         </div>
       </div>
     </div>

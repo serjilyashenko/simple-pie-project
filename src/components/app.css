@@ -8,3 +8,8 @@
 .simple-pie-container {
   width: 200px;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
