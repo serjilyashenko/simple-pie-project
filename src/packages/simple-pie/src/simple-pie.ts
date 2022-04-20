@@ -1,5 +1,9 @@
 import { defaultPalette } from "./const";
-import { castValuesToAngles, sectorPathFactory } from "./sector-path";
+import {
+  castValuesToAngles,
+  doughnutSectorPathFactory,
+  piePathFactory,
+} from "./sector-path";
 import type { TSectorCoordinate } from "./type";
 
 function svgWrapperFactory(element: string, borderColor = "black") {
@@ -12,16 +16,11 @@ function svgWrapperFactory(element: string, borderColor = "black") {
   `;
 }
 
-function svgSectorFactory(coordinate: TSectorCoordinate, color: string) {
-  const d: string = sectorPathFactory(coordinate);
-
-  return `<path fill="${color}" d="${d}"/>`;
-}
-
-export function simplePieElement(
+function _simplePieElement(
+  pathFactory: (coordinate: TSectorCoordinate) => string,
   values: number[],
-  pallet = defaultPalette,
-  borderColor = "black"
+  pallet: string[],
+  borderColor: string
 ) {
   const pieElement: HTMLDivElement = document.createElement("div");
 
@@ -32,7 +31,9 @@ export function simplePieElement(
   const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(_values);
 
   const sectorElementList = angleCoordinates.map((coordinate, index) => {
-    return svgSectorFactory(coordinate, pallet[index % pallet.length]);
+    const d: string = pathFactory(coordinate);
+
+    return `<path fill="${pallet[index % pallet.length]}" d="${d}"/>`;
   });
 
   pieElement.innerHTML = svgWrapperFactory(
@@ -41,6 +42,29 @@ export function simplePieElement(
   );
 
   return pieElement;
+}
+
+export function simplePieElement(
+  values: number[],
+  pallet = defaultPalette,
+  borderColor = "black"
+) {
+  return _simplePieElement(piePathFactory, values, pallet, borderColor);
+}
+
+export function simpleDoughnutElement(
+  values: number[],
+  inner = 0.5,
+  pallet = defaultPalette,
+  borderColor = "black"
+) {
+  return _simplePieElement(
+    (coordinate: TSectorCoordinate) =>
+      doughnutSectorPathFactory(coordinate, inner),
+    values,
+    pallet,
+    borderColor
+  );
 }
 
 const isBrowser =
@@ -57,7 +81,7 @@ if (isBrowser) {
 }
 
 export {
-  sectorPathFactory,
+  piePathFactory,
   TSectorCoordinate,
   castValuesToAngles,
   defaultPalette,

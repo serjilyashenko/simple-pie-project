@@ -46,3 +46,6 @@ cd src/packages/react-simple-pie
 npm run build
 npm run npm:publish
 ```
+
+**Note for myself:** I created two pathFactories instead of one. To keep simplicity of pie diagram.
+However, obvious doughnut pathFactory can be used to build pi with 0 inner radius

@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 // import { SimplePie } from "../packages/react-simple-pie/src/SimplePie";
 import {
   simplePieElement,
+  simpleDoughnutElement,
   defaultPalette,
 } from "../packages/simple-pie/src/simple-pie";
 import "./app.css";
@@ -10,6 +11,8 @@ import "./app.css";
 export function App(): JSX.Element {
   const borderedPieRef = useRef<HTMLDivElement>(null);
   const borderLessPieRef = useRef<HTMLDivElement>(null);
+  const borderedDoughnutRef = useRef<HTMLDivElement>(null);
+  const borderLessDoughnutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (borderedPieRef.current) {
@@ -24,6 +27,19 @@ export function App(): JSX.Element {
       );
       borderLessPieRef.current.appendChild(svgElement);
     }
+    if (borderedDoughnutRef.current) {
+      const svgElement = simpleDoughnutElement([2, 1, 1, 2]);
+      borderedDoughnutRef.current.appendChild(svgElement);
+    }
+    if (borderLessDoughnutRef.current) {
+      const svgElement = simpleDoughnutElement(
+        [2, 1, 1, 2],
+        0.5,
+        defaultPalette,
+        "transparent"
+      );
+      borderLessDoughnutRef.current.appendChild(svgElement);
+    }
   });
 
   return (
@@ -36,6 +52,10 @@ export function App(): JSX.Element {
           <div className="row">
             <div ref={borderedPieRef} />
             <div ref={borderLessPieRef} />
+          </div>
+          <div className="row">
+            <div ref={borderedDoughnutRef} />
+            <div ref={borderLessDoughnutRef} />
           </div>
         </div>
       </div>
