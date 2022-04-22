@@ -3,27 +3,35 @@ import { PI } from "./const";
 
 const radius = 50;
 
-export function piePathFactory(coordinate: TSectorCoordinate): string {
+export function sectorFactory(
+  coordinate: TSectorCoordinate,
+  color: string
+): string {
   const [radAngle0, radAngleDiff] = coordinate;
+
+  if (isFullCircle(radAngleDiff)) {
+    return `<circle cx="50" cy="50" r="${radius}" fill="${color}" />`;
+  }
+
+  const radAngle: number = radAngle0 + radAngleDiff;
 
   const x0: number = radius + radius * Math.sin(radAngle0);
   const y0: number = radius - radius * Math.cos(radAngle0);
-
-  let radAngle: number = radAngle0 + radAngleDiff;
-  radAngle = radAngleDiff !== 2 * PI ? radAngle : radAngle - 0.01;
-
   const x: number = radius + radius * Math.sin(radAngle);
   const y: number = radius - radius * Math.cos(radAngle);
 
   const largeArcFlag: number = radAngleDiff > PI ? 1 : 0;
   const sweepFlag = 1;
 
-  return `M ${radius} ${radius} L ${x0} ${y0} A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${x} ${y} Z`;
+  const d = `M ${radius} ${radius} L ${x0} ${y0} A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${x} ${y} Z`;
+
+  return `<path fill="${color}" d="${d}"/>`;
 }
 
 export function doughnutSectorPathFactory(
   coordinate: TSectorCoordinate,
-  inner = 0.5
+  inner = 0.5,
+  color: string
 ): string {
   const [radAngle0, radAngleDiff] = coordinate;
 
@@ -45,11 +53,17 @@ export function doughnutSectorPathFactory(
 
   const largeArcFlag: number = radAngleDiff > PI ? 1 : 0;
 
-  return `M ${x0} ${y0}
+  const d = `M ${x0} ${y0}
           A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x} ${y}
           L ${xi} ${yi}
           A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${xi0} ${yi0}
           Z`;
+
+  return `<path fill="${color}" d="${d}"/>`;
+}
+
+function isFullCircle(radAngleDiff: number): boolean {
+  return Math.ceil(radAngleDiff * 100) >= Math.ceil(2 * PI * 100);
 }
 
 export function castValuesToAngles(values: number[]): TSectorCoordinate[] {

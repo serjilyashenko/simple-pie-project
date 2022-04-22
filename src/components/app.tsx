@@ -62,7 +62,7 @@ export function App(): JSX.Element {
         doughnut.classList.add("simple-pie-container");
         doughnut.appendChild(valueElement);
         doughnut.appendChild(
-          simpleDoughnutElement(set, 0.5, defaultPalette, "white", "1")
+          simpleDoughnutElement(set, 0.5, defaultPalette, "transparent")
         );
 
         doughnutSetContainer1.current.appendChild(doughnut);
@@ -71,21 +71,17 @@ export function App(): JSX.Element {
     [1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 26].forEach((value) => {
       if (doughnutSetContainer2.current) {
         const valueElement = document.createElement("div");
+        const pie = document.createElement("div");
         const doughnut = document.createElement("div");
 
         valueElement.innerText = String(value);
+        pie.classList.add("simple-pie-container");
         doughnut.classList.add("simple-pie-container");
         doughnut.appendChild(valueElement);
-        doughnut.appendChild(
-          simpleDoughnutElement(
-            [value],
-            0.5,
-            defaultPalette,
-            "transparent",
-            "1"
-          )
-        );
+        pie.appendChild(simplePieElement([value]));
+        doughnut.appendChild(simpleDoughnutElement([value]));
 
+        doughnutSetContainer2.current.appendChild(pie);
         doughnutSetContainer2.current.appendChild(doughnut);
       }
     });

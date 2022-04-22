@@ -2,7 +2,7 @@ import { defaultPalette } from "./const";
 import {
   castValuesToAngles,
   doughnutSectorPathFactory,
-  piePathFactory,
+  sectorFactory,
 } from "./sector-path";
 import type { TSectorCoordinate } from "./type";
 
@@ -11,7 +11,6 @@ function svgWrapperFactory(
   borderColor = "black",
   borderWidth = "1"
 ) {
-  console.log(">>", borderWidth);
   return `
         <svg height="100%" width="100%" viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
             <g stroke="${borderColor}" stroke-width="${borderWidth}px" fill="transparent">
@@ -22,7 +21,7 @@ function svgWrapperFactory(
 }
 
 function _simplePieElement(
-  pathFactory: (coordinate: TSectorCoordinate) => string,
+  sectorFactory: (coordinate: TSectorCoordinate, color: string) => string,
   values: number[],
   pallet: string[],
   borderColor: string,
@@ -37,9 +36,7 @@ function _simplePieElement(
   const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(_values);
 
   const sectorElementList = angleCoordinates.map((coordinate, index) => {
-    const d: string = pathFactory(coordinate);
-
-    return `<path fill="${pallet[index % pallet.length]}" d="${d}"/>`;
+    return sectorFactory(coordinate, pallet[index % pallet.length]);
   });
 
   pieElement.innerHTML = svgWrapperFactory(
@@ -58,7 +55,7 @@ export function simplePieElement(
   borderWidth?: string
 ) {
   return _simplePieElement(
-    piePathFactory,
+    sectorFactory,
     values,
     pallet || defaultPalette,
     borderColor || "black",
@@ -74,8 +71,8 @@ export function simpleDoughnutElement(
   borderWidth?: string
 ) {
   return _simplePieElement(
-    (coordinate: TSectorCoordinate) =>
-      doughnutSectorPathFactory(coordinate, inner),
+    (coordinate: TSectorCoordinate, color: string) =>
+      doughnutSectorPathFactory(coordinate, inner, color),
     values,
     pallet || defaultPalette,
     borderColor || "black",
@@ -96,9 +93,4 @@ if (isBrowser) {
   window.simplePie = simplePieElement;
 }
 
-export {
-  piePathFactory,
-  TSectorCoordinate,
-  castValuesToAngles,
-  defaultPalette,
-};
+export { sectorFactory, TSectorCoordinate, castValuesToAngles, defaultPalette };
