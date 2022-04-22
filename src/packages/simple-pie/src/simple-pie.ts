@@ -11,9 +11,10 @@ function svgWrapperFactory(
   borderColor = "black",
   borderWidth = "1"
 ) {
+  console.log(">>", borderWidth);
   return `
         <svg height="100%" width="100%" viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="${borderColor}" stroke-width="1" fill="transparent">
+            <g stroke="${borderColor}" stroke-width="${borderWidth}px" fill="transparent">
                 ${element}
             </g>
         </svg>

@@ -26,13 +26,18 @@ export function App(): JSX.Element {
       const svgElement = simplePieElement(
         [2, 1, 1, 2],
         defaultPalette,
-        "transparent",
-        "1"
+        "transparent"
       );
       borderLessPieRef.current.appendChild(svgElement);
     }
     if (borderedDoughnutRef.current) {
-      const svgElement = simpleDoughnutElement([2, 1, 1, 2]);
+      const svgElement = simpleDoughnutElement(
+        [2, 1, 1, 2],
+        0.8,
+        defaultPalette,
+        "black",
+        "3"
+      );
       borderedDoughnutRef.current.appendChild(svgElement);
     }
     if (borderLessDoughnutRef.current) {
@@ -57,7 +62,7 @@ export function App(): JSX.Element {
         doughnut.classList.add("simple-pie-container");
         doughnut.appendChild(valueElement);
         doughnut.appendChild(
-          simpleDoughnutElement(set, 0.5, defaultPalette, "black", "1")
+          simpleDoughnutElement(set, 0.5, defaultPalette, "white", "1")
         );
 
         doughnutSetContainer1.current.appendChild(doughnut);
