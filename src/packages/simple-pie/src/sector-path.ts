@@ -44,13 +44,11 @@ export function doughnutSectorPathFactory(
   const yi: number = radius - innerRadius * Math.cos(radAngle);
 
   const largeArcFlag: number = radAngleDiff > PI ? 1 : 0;
-  const innerLargeArcFlag: number = radAngleDiff > PI ? 0 : 1;
-  const sweepFlag = 1;
 
-  return `M ${radius} ${y0}
-          A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${x} ${y}
+  return `M ${x0} ${y0}
+          A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x} ${y}
           L ${xi} ${yi}
-          A ${innerRadius} ${innerRadius} 0 ${innerLargeArcFlag} ${sweepFlag} ${xi0} ${yi0}
+          A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${xi0} ${yi0}
           Z`;
 }
 

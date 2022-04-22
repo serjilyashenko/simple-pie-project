@@ -6,10 +6,14 @@ import {
 } from "./sector-path";
 import type { TSectorCoordinate } from "./type";
 
-function svgWrapperFactory(element: string, borderColor = "black") {
+function svgWrapperFactory(
+  element: string,
+  borderColor = "black",
+  borderWidth = "1"
+) {
   return `
-        <svg viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="${borderColor}" stroke-width="2px" fill="transparent">
+        <svg height="100%" width="100%" viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="${borderColor}" stroke-width="1" fill="transparent">
                 ${element}
             </g>
         </svg>
@@ -20,7 +24,8 @@ function _simplePieElement(
   pathFactory: (coordinate: TSectorCoordinate) => string,
   values: number[],
   pallet: string[],
-  borderColor: string
+  borderColor: string,
+  borderWidth: string
 ) {
   const pieElement: HTMLDivElement = document.createElement("div");
 
@@ -38,7 +43,8 @@ function _simplePieElement(
 
   pieElement.innerHTML = svgWrapperFactory(
     sectorElementList.join(""),
-    borderColor
+    borderColor,
+    borderWidth
   );
 
   return pieElement;
@@ -46,24 +52,33 @@ function _simplePieElement(
 
 export function simplePieElement(
   values: number[],
-  pallet = defaultPalette,
-  borderColor = "black"
+  pallet?: string[],
+  borderColor?: string,
+  borderWidth?: string
 ) {
-  return _simplePieElement(piePathFactory, values, pallet, borderColor);
+  return _simplePieElement(
+    piePathFactory,
+    values,
+    pallet || defaultPalette,
+    borderColor || "black",
+    borderWidth || "1"
+  );
 }
 
 export function simpleDoughnutElement(
   values: number[],
   inner = 0.5,
-  pallet = defaultPalette,
-  borderColor = "black"
+  pallet?: string[],
+  borderColor?: string,
+  borderWidth?: string
 ) {
   return _simplePieElement(
     (coordinate: TSectorCoordinate) =>
       doughnutSectorPathFactory(coordinate, inner),
     values,
-    pallet,
-    borderColor
+    pallet || defaultPalette,
+    borderColor || "black",
+    borderWidth || "1"
   );
 }
 

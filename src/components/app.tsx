@@ -14,6 +14,9 @@ export function App(): JSX.Element {
   const borderedDoughnutRef = useRef<HTMLDivElement>(null);
   const borderLessDoughnutRef = useRef<HTMLDivElement>(null);
 
+  const doughnutSetContainer1 = useRef<HTMLElement>(null);
+  const doughnutSetContainer2 = useRef<HTMLElement>(null);
+
   useEffect(() => {
     if (borderedPieRef.current) {
       const svgElement = simplePieElement([2, 1, 1, 2]);
@@ -23,7 +26,8 @@ export function App(): JSX.Element {
       const svgElement = simplePieElement(
         [2, 1, 1, 2],
         defaultPalette,
-        "transparent"
+        "transparent",
+        "1"
       );
       borderLessPieRef.current.appendChild(svgElement);
     }
@@ -40,25 +44,65 @@ export function App(): JSX.Element {
       );
       borderLessDoughnutRef.current.appendChild(svgElement);
     }
+    Array.from({ length: 16 }, () =>
+      Array.from({ length: Math.floor(Math.random() * 10 + 1) }, () =>
+        Math.floor(Math.random() * 101)
+      )
+    ).forEach((set: number[]) => {
+      if (doughnutSetContainer1.current) {
+        const valueElement = document.createElement("div");
+        const doughnut = document.createElement("div");
+
+        valueElement.innerText = JSON.stringify(set);
+        doughnut.classList.add("simple-pie-container");
+        doughnut.appendChild(valueElement);
+        doughnut.appendChild(
+          simpleDoughnutElement(set, 0.5, defaultPalette, "black", "1")
+        );
+
+        doughnutSetContainer1.current.appendChild(doughnut);
+      }
+    });
+    [1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 26].forEach((value) => {
+      if (doughnutSetContainer2.current) {
+        const valueElement = document.createElement("div");
+        const doughnut = document.createElement("div");
+
+        valueElement.innerText = String(value);
+        doughnut.classList.add("simple-pie-container");
+        doughnut.appendChild(valueElement);
+        doughnut.appendChild(
+          simpleDoughnutElement(
+            [value],
+            0.5,
+            defaultPalette,
+            "transparent",
+            "1"
+          )
+        );
+
+        doughnutSetContainer2.current.appendChild(doughnut);
+      }
+    });
   });
 
   return (
-    <div>
-      <div className="app">
-        <h1>React Simple Pie</h1>
-        <div className="simple-pie-container">
-          {/*<SimplePie values={[1, 2, 1, 2]} />*/}
-          {/*<SimplePie values={[1, 1, 1]} />*/}
-          <div className="row">
-            <div ref={borderedPieRef} />
-            <div ref={borderLessPieRef} />
-          </div>
-          <div className="row">
-            <div ref={borderedDoughnutRef} />
-            <div ref={borderLessDoughnutRef} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <main className="app">
+      <h1>React Simple Pie</h1>
+      <section>
+        {/*<SimplePie values={[1, 2, 1, 2]} />*/}
+        {/*<SimplePie values={[1, 1, 1]} />*/}
+      </section>
+      <section>
+        <div className="simple-pie-container" ref={borderedPieRef} />
+        <div className="simple-pie-container" ref={borderLessPieRef} />
+      </section>
+      <section>
+        <div className="simple-pie-container" ref={borderedDoughnutRef} />
+        <div className="simple-pie-container" ref={borderLessDoughnutRef} />
+      </section>
+      <section ref={doughnutSetContainer1}></section>
+      <section ref={doughnutSetContainer2}></section>
+    </main>
   );
 }

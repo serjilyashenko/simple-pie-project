@@ -6,10 +6,6 @@
 }
 
 .simple-pie-container {
+  display: inline-block;
   width: 200px;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
 }
