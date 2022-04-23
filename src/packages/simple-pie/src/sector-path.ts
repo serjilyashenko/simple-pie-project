@@ -3,14 +3,14 @@ import { PI } from "./const";
 
 const radius = 50;
 
-export function sectorFactory(
-  coordinate: TSectorCoordinate,
-  color: string
-): string {
+export function sectorPathFactory(coordinate: TSectorCoordinate): string {
   const [radAngle0, radAngleDiff] = coordinate;
 
   if (isFullCircle(radAngleDiff)) {
-    return `<circle cx="50" cy="50" r="${radius}" fill="${color}" />`;
+    // draw full circle with two curves
+    return `M ${radius} 0
+            A ${radius} ${radius} 0 1 1 ${radius} ${2 * radius}
+            A ${radius} ${radius} 0 1 1 ${radius} 0 Z`;
   }
 
   const radAngle: number = radAngle0 + radAngleDiff;
@@ -23,21 +23,29 @@ export function sectorFactory(
   const largeArcFlag: number = radAngleDiff > PI ? 1 : 0;
   const sweepFlag = 1;
 
-  const d = `M ${radius} ${radius} L ${x0} ${y0} A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${x} ${y} Z`;
-
-  return `<path fill="${color}" d="${d}"/>`;
+  return `M ${radius} ${radius}
+          L ${x0} ${y0}
+          A ${radius} ${radius} 0 ${largeArcFlag} ${sweepFlag} ${x} ${y} Z`;
 }
 
 export function doughnutSectorPathFactory(
   coordinate: TSectorCoordinate,
-  inner = 0.5,
-  color: string
+  inner = 0.5
 ): string {
   const [radAngle0, radAngleDiff] = coordinate;
-
   const innerRadius = radius * inner;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  if (isFullCircle(radAngleDiff)) {
+    // draw full circle with two curves and cut another circle inside with fill-rule="evenodd" in parent <g> element
+    // prettier-ignore
+    return `M ${radius} 0
+            A ${radius} ${radius} 0 1 1 ${radius} ${2 * radius}
+            A ${radius} ${radius} 0 1 1 ${radius} 0 Z
+            M ${radius} ${radius - innerRadius}
+            A ${innerRadius} ${innerRadius} 0 1 0 ${radius} ${radius + innerRadius}
+            A ${innerRadius} ${innerRadius} 0 1 0 ${radius} ${radius - innerRadius} Z`;
+  }
+
   const x0: number = radius + radius * Math.sin(radAngle0);
   const y0: number = radius - radius * Math.cos(radAngle0);
   const xi0: number = radius + innerRadius * Math.sin(radAngle0);
@@ -53,13 +61,11 @@ export function doughnutSectorPathFactory(
 
   const largeArcFlag: number = radAngleDiff > PI ? 1 : 0;
 
-  const d = `M ${x0} ${y0}
+  return `M ${x0} ${y0}
           A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x} ${y}
           L ${xi} ${yi}
           A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${xi0} ${yi0}
           Z`;
-
-  return `<path fill="${color}" d="${d}"/>`;
 }
 
 function isFullCircle(radAngleDiff: number): boolean {

@@ -79,7 +79,7 @@ export function App(): JSX.Element {
         doughnut.classList.add("simple-pie-container");
         doughnut.appendChild(valueElement);
         pie.appendChild(simplePieElement([value]));
-        doughnut.appendChild(simpleDoughnutElement([value]));
+        doughnut.appendChild(simpleDoughnutElement([value], 0.7));
 
         doughnutSetContainer2.current.appendChild(pie);
         doughnutSetContainer2.current.appendChild(doughnut);

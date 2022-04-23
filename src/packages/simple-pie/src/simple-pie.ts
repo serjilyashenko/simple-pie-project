@@ -2,7 +2,7 @@ import { defaultPalette } from "./const";
 import {
   castValuesToAngles,
   doughnutSectorPathFactory,
-  sectorFactory,
+  sectorPathFactory,
 } from "./sector-path";
 import type { TSectorCoordinate } from "./type";
 
@@ -13,7 +13,7 @@ function svgWrapperFactory(
 ) {
   return `
         <svg height="100%" width="100%" viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="${borderColor}" stroke-width="${borderWidth}px" fill="transparent">
+            <g fill-rule="evenodd" stroke="${borderColor}" stroke-width="${borderWidth}px" fill="transparent">
                 ${element}
             </g>
         </svg>
@@ -21,7 +21,7 @@ function svgWrapperFactory(
 }
 
 function _simplePieElement(
-  sectorFactory: (coordinate: TSectorCoordinate, color: string) => string,
+  pathFactory: (coordinate: TSectorCoordinate) => string,
   values: number[],
   pallet: string[],
   borderColor: string,
@@ -36,7 +36,9 @@ function _simplePieElement(
   const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(_values);
 
   const sectorElementList = angleCoordinates.map((coordinate, index) => {
-    return sectorFactory(coordinate, pallet[index % pallet.length]);
+    const d: string = pathFactory(coordinate);
+
+    return `<path fill="${pallet[index % pallet.length]}" d="${d}"/>`;
   });
 
   pieElement.innerHTML = svgWrapperFactory(
@@ -55,7 +57,7 @@ export function simplePieElement(
   borderWidth?: string
 ) {
   return _simplePieElement(
-    sectorFactory,
+    sectorPathFactory,
     values,
     pallet || defaultPalette,
     borderColor || "black",
@@ -71,8 +73,8 @@ export function simpleDoughnutElement(
   borderWidth?: string
 ) {
   return _simplePieElement(
-    (coordinate: TSectorCoordinate, color: string) =>
-      doughnutSectorPathFactory(coordinate, inner, color),
+    (coordinate: TSectorCoordinate) =>
+      doughnutSectorPathFactory(coordinate, inner),
     values,
     pallet || defaultPalette,
     borderColor || "black",
@@ -93,4 +95,9 @@ if (isBrowser) {
   window.simplePie = simplePieElement;
 }
 
-export { sectorFactory, TSectorCoordinate, castValuesToAngles, defaultPalette };
+export {
+  sectorPathFactory,
+  TSectorCoordinate,
+  castValuesToAngles,
+  defaultPalette,
+};
