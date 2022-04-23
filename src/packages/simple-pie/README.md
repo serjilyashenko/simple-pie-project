@@ -1,4 +1,4 @@
-# react-simple-pie
+# simple-pie
 
 Super light weight and super simple svg pie diagram
 
