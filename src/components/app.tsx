@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-// import { SimplePie } from "../packages/react-simple-pie/src/SimplePie";
+import { SimplePie } from "../packages/react-simple-pie/src/SimplePie";
 import {
   simplePieElement,
   simpleDoughnutElement,
@@ -83,8 +83,12 @@ export function App(): JSX.Element {
     <main className="app">
       <h1>React Simple Pie</h1>
       <section>
-        {/*<SimplePie values={[1, 2, 1, 2]} />*/}
-        {/*<SimplePie values={[1, 1, 1]} />*/}
+        <div className="simple-pie-container">
+          <SimplePie values={[1, 2, 1, 2]} />
+        </div>
+        <div className="simple-pie-container">
+          <SimplePie values={[1, 1, 1]} />
+        </div>
       </section>
       <section>
         <div className="simple-pie-container" ref={borderedPieRef} />

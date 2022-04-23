@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  castValuesToAngles,
-  defaultPalette,
-  TSectorCoordinate,
-} from "simple-pie";
+import { castValuesToAngles, defaultPalette } from "simple-pie";
+import type { TSectorCoordinate } from "simple-pie";
 import { Sector } from "./Sector";
 import type { TSimplePieProps } from "./type";
 
@@ -29,4 +26,4 @@ export function SimplePie(props: TSimplePieProps): JSX.Element {
   );
 }
 
-export { Sector, TSectorCoordinate };
+export { Sector };
