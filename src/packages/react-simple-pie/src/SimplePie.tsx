@@ -5,12 +5,7 @@ import {
   TSectorCoordinate,
 } from "simple-pie";
 import { Sector } from "./Sector";
-
-type TSimplePieProps = {
-  values: number[];
-  palette?: string[];
-  borderColor?: string;
-};
+import type { TSimplePieProps } from "./type";
 
 export function SimplePie(props: TSimplePieProps): JSX.Element {
   const { values, palette = defaultPalette, borderColor = "black" } = props;

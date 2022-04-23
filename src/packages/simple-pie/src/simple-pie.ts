@@ -1,36 +1,39 @@
-import { defaultPalette } from "./const";
+import {
+  defaultDoughnutOptions,
+  defaultPalette,
+  defaultPieOptions,
+} from "./const";
 import {
   castValuesToAngles,
   doughnutSectorPathFactory,
   sectorPathFactory,
 } from "./sector-path";
-import type { TSectorCoordinate } from "./type";
+import type { TSectorCoordinate, TPieOptions, TDoughnutOptions } from "./type";
 
 function svgWrapperFactory(
   element: string,
-  borderColor = "black",
-  borderWidth = "1"
-) {
-  return `
-        <svg height="100%" width="100%" viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
-            <g fill-rule="evenodd" stroke="${borderColor}" stroke-width="${borderWidth}px" fill="transparent">
-                ${element}
-            </g>
-        </svg>
+  borderColor: string,
+  borderWidth: number
+): SVGElement {
+  const svgElem = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svgElem.setAttributeNS(null, "viewBox", "-5 -5 110 110");
+  svgElem.style.display = "block";
+
+  svgElem.innerHTML = `
+    <g fill-rule="evenodd" stroke="${borderColor}" stroke-width="${borderWidth}px" fill="transparent">
+       ${element}
+    </g>
   `;
+
+  return svgElem;
 }
 
 function _simplePieElement(
   pathFactory: (coordinate: TSectorCoordinate) => string,
   values: number[],
-  pallet: string[],
-  borderColor: string,
-  borderWidth: string
-) {
-  const pieElement: HTMLDivElement = document.createElement("div");
-
-  pieElement.style.width = "100%";
-  pieElement.style.height = "100%";
+  options: Required<TPieOptions>
+): SVGElement {
+  const { pallet, borderColor, borderWidth } = options;
 
   const _values: number[] = values || new Array(pallet.length).fill(1);
   const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(_values);
@@ -41,44 +44,61 @@ function _simplePieElement(
     return `<path fill="${pallet[index % pallet.length]}" d="${d}"/>`;
   });
 
-  pieElement.innerHTML = svgWrapperFactory(
+  return svgWrapperFactory(
     sectorElementList.join(""),
     borderColor,
     borderWidth
   );
-
-  return pieElement;
 }
 
 export function simplePieElement(
   values: number[],
   pallet?: string[],
   borderColor?: string,
-  borderWidth?: string
-) {
-  return _simplePieElement(
-    sectorPathFactory,
-    values,
-    pallet || defaultPalette,
-    borderColor || "black",
-    borderWidth || "1"
-  );
+  borderWidth?: number
+): SVGElement;
+export function simplePieElement(
+  values: number[],
+  options?: TPieOptions
+): SVGElement;
+export function simplePieElement(
+  values: number[],
+  palletOrOptions?: string[] | TPieOptions,
+  borderColor?: string,
+  borderWidth?: number
+): SVGElement {
+  const defaultOptions: Required<TPieOptions> = defaultPieOptions;
+  let optionsMixin: TPieOptions = {};
+
+  if (Array.isArray(palletOrOptions)) {
+    optionsMixin = {
+      pallet: palletOrOptions,
+      borderColor,
+      borderWidth,
+    };
+  } else {
+    optionsMixin = palletOrOptions || {};
+  }
+  const options: Required<TPieOptions> = {
+    ...defaultOptions,
+    ...optionsMixin,
+  };
+
+  return _simplePieElement(sectorPathFactory, values, options);
 }
 
 export function simpleDoughnutElement(
   values: number[],
-  inner = 0.5,
-  pallet?: string[],
-  borderColor?: string,
-  borderWidth?: string
-) {
+  options: TDoughnutOptions = {}
+): SVGElement {
+  const resultOptions = { ...defaultDoughnutOptions, ...options };
+  const { inner, ...pieOptions } = resultOptions;
+
   return _simplePieElement(
     (coordinate: TSectorCoordinate) =>
       doughnutSectorPathFactory(coordinate, inner),
     values,
-    pallet || defaultPalette,
-    borderColor || "black",
-    borderWidth || "1"
+    pieOptions
   );
 }
 
@@ -98,6 +118,8 @@ if (isBrowser) {
 export {
   sectorPathFactory,
   TSectorCoordinate,
+  TPieOptions,
+  TDoughnutOptions,
   castValuesToAngles,
   defaultPalette,
 };

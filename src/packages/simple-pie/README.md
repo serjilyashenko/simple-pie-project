@@ -2,7 +2,8 @@
 
 Super light weight and super simple svg pie diagram
 
-See the demo: https://serjilyashenko.github.io/react-simple-pie
+See the demo: https://serjilyashenko.github.io/react-simple-pie \
+And check use examples here: https://serjilyashenko.github.io/react-simple-pie
 
 ## Installation
 

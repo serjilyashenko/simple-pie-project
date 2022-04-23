@@ -1,3 +1,5 @@
+import { TDoughnutOptions, TPieOptions } from "./type";
+
 export const PI = Math.PI;
 
 export const defaultPalette = [
@@ -56,3 +58,14 @@ export const defaultPalette = [
   "#F07818",
   "#F0A830",
 ];
+
+export const defaultPieOptions: Required<TPieOptions> = {
+  pallet: defaultPalette,
+  borderColor: "black",
+  borderWidth: 1,
+};
+
+export const defaultDoughnutOptions: Required<TDoughnutOptions> = {
+  ...defaultPieOptions,
+  inner: 0.7,
+};
