@@ -1,11 +1,16 @@
 import React from "react";
-import { castValuesToAngles, defaultPalette } from "simple-pie";
 import type { TSectorCoordinate } from "simple-pie";
-import { Sector } from "./Sector";
-import type { TPieProps } from "./type";
+import { castValuesToAngles, defaultPalette } from "simple-pie";
+import type { TDoughnutProps } from "./type";
+import { DoughnutSector } from "./DoughnutSector";
 
-export function SimplePie(props: TPieProps): JSX.Element {
-  const { values, palette = defaultPalette, borderColor = "black" } = props;
+export function SimplePie(props: TDoughnutProps): JSX.Element {
+  const {
+    values,
+    palette = defaultPalette,
+    borderColor = "black",
+    borderWidth,
+  } = props;
 
   const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(values);
 
@@ -14,10 +19,11 @@ export function SimplePie(props: TPieProps): JSX.Element {
       <g stroke={borderColor} strokeWidth="2px" fill="transparent">
         {angleCoordinates.map(
           (coordinate: TSectorCoordinate, index: number): JSX.Element => (
-            <Sector
+            <DoughnutSector
               key={index}
               coordinate={coordinate}
               color={palette[index]}
+              borderWidth={borderWidth}
             />
           )
         )}

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { SimplePie } from "../packages/react-simple-pie/src/SimplePie";
+import { SimplePie } from "../packages/react-simple-pie/src";
 import {
   simplePieElement,
   simpleDoughnutElement,
