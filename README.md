@@ -1,6 +1,9 @@
-# react-simple-pie
+<div align="center">
+  <h1>React Simple Pie<br/>🥧</h1>
+  <p>Super light weight and super simple svg pie diagram react component</p>
+</div>
 
-Super light weight and super simple svg pie diagram react component
+<hr/>
 
 ## Installation
 
