@@ -1,6 +1,6 @@
 <div align="center">
   <h1>React Simple Pie<br/>🥧</h1>
-  <p>Super light weight and super simple svg pie diagram react component</p>
+  <p>Super light weight and super simple svg pie diagram packages</p>
 </div>
 
 <hr/>
