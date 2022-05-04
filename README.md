@@ -5,6 +5,15 @@
 
 <hr/>
 
+## Packages
+
+The project includes two npm packages:
+
+* [Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie)
+* [React Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie)
+
+You can find them in the `/src/packages` folder
+
 ## Installation
 
 ```shell
