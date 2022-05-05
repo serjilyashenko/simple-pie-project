@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>React Simple Pie<br/>🥧</h1>
-  <p>Super light weight and super simple svg pie diagram packages</p>
+  <h1>Simple Pie Project<br/>🥧 🍩</h1>
+  <p>Super light weight and super simple svg pie/doughnut diagram packages</p>
 </div>
 
 <hr/>
@@ -11,8 +11,10 @@ The project includes two npm packages:
 
 * [Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie)
 * [React Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie)
+ 
+You can find them in the `/src/packages` folder. If you want to use diagram package or check it out, please look [this](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie), and [that](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie) (for react wrapper).
 
-You can find them in the `/src/packages` folder
+Meanwhile the current project is for simple-pie and react-simple-pie development and demo.
 
 ## Installation
 
@@ -59,5 +61,5 @@ npm run build
 npm run npm:publish
 ```
 
-**Note for myself:** I created two pathFactories instead of one. To keep simplicity of pie diagram.
-However, obvious doughnut pathFactory can be used to build pi with 0 inner radius
+**Note for myself:** I created two `pathFactories` instead of one. To keep simplicity of pie diagram.
+However, obvious `doughnutPathFactory` can be used to build pie with 0 inner radius
