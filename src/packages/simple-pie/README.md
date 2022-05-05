@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Simple Pie Project<br/>🥧 🍩</h1>
+  <h1>Simple Pie<br/>🥧 🍩</h1>
   <p>Super light weight and super simple svg pie/doughnut diagram</p>
 </div>
 
