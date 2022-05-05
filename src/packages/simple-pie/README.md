@@ -1,9 +1,9 @@
-# simple-pie
+<div align="center">
+  <h1>Simple Pie Project<br/>🥧 🍩</h1>
+  <p>Super light weight and super simple svg pie/doughnut diagram</p>
+</div>
 
-Super light weight and super simple svg pie diagram
-
-See the demo: https://serjilyashenko.github.io/react-simple-pie \
-And check use examples here: https://serjilyashenko.github.io/react-simple-pie
+<hr/>
 
 ## Installation
 
