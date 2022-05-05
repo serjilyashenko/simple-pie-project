@@ -5,6 +5,8 @@
 
 <hr/>
 
+If you are going to use simple diagram in react project, please check [React Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie) out
+
 ## Installation
 
 ```shell
