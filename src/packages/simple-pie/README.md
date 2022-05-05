@@ -37,3 +37,5 @@ import {simplePie, simpleDoughnut} from "react-simple-pie";
 const svgPie = simplePie([2, 1, 1, 2]);
 const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
 ```
+
+### Options
