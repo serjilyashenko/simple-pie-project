@@ -113,6 +113,7 @@ declare global {
 
 if (isBrowser) {
   window.simplePie = simplePieElement;
+  window.simpleDoughnut = simpleDoughnutElement;
 }
 
 export {
