@@ -16,11 +16,24 @@ yarn add simple-pie
 ### Use
 
 ```html
-<div id="container"></div>
+<div id="pie-container"></div>
+<div id="doughnut-container"></div>
 
 <script src="node_modules/simple-pie/dist/simple-pie.min.js"></script>
 <script>
-    const svgElement = simplePie([2, 1, 1, 2]);
-    document.getElementById('container').appendChild(svgElement);
+    const svgPieElement = simplePie([2, 1, 1, 2]);
+    document.getElementById('pie-container').appendChild(svgPieElement);
+  
+    const svgDoughnutElement = simpleDoughnut([2, 1, 1, 2]);
+    document.getElementById('doughnut-container').appendChild(svgDoughnutElement);
 </script>
+```
+
+Since `simplePie` and `simpleDoughnut` return regular svg, you can use it as you wish.
+
+```js
+import {simplePie, simpleDoughnut} from "react-simple-pie";
+
+const svgPie = simplePie([2, 1, 1, 2]);
+const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
 ```
