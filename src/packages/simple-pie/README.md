@@ -15,7 +15,7 @@ npm install simple-pie --save
 yarn add simple-pie
 ```
 
-### Use
+## Use
 
 ```html
 <div id="pie-container"></div>
@@ -40,4 +40,34 @@ const svgPie = simplePie([2, 1, 1, 2]);
 const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
 ```
 
-### Options
+## Interface
+
+```ts
+// Pie
+type TPieOptions = {
+  pallet?: string[];
+  borderColor?: string;
+  borderWidth?: number;
+};
+
+function simplePieElement(
+  values: number[],
+  options?: TPieOptions
+): SVGElement;
+
+// Doughnut
+type TDoughnutOptions = TPieOptions & {
+  inner?: number;                         // 0..1 - percent from outer radius
+};
+
+function simpleDoughnutElement(
+  values: number[],
+  options: TDoughnutOptions = {}
+): SVGElement
+```
+
+If you need borderless diagram, just set `borderColor: "transparent"` or `borderWidth: 0`
+
+### Old version api
+
+The old version of pie diagram is still supported. However it is depricated. Please use the new one.
