@@ -16,18 +16,6 @@ You can find them in the `/src/packages` folder. If you want to use diagram pack
 
 Meanwhile, the current project is for simple-pie and react-simple-pie development and their demo.
 
-## Installation
-
-```shell
-npm install react-simple-pie
-```
-
-### Use in NodeJs:
-
-```js
-import SVGPie from "react-simple-pie";
-```
-
 ## Development
 ```bash
   npm install

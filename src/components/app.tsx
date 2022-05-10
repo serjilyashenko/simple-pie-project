@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
 // import { SimplePie } from "../packages/react-simple-pie/src";
-import {
-  simplePieElement,
-  simpleDoughnutElement,
-} from "../packages/simple-pie/src/simple-pie";
+
+import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie";
+// import {simplePie, simpleDoughnut} from "simple-pie"; // TODO: test with real package. And don't forget to change version in package.json
+
 import "./app.css";
 
 export function App(): JSX.Element {
@@ -18,23 +18,23 @@ export function App(): JSX.Element {
 
   useEffect(() => {
     if (borderedPieRef.current) {
-      const svgElement = simplePieElement([2, 1, 1, 2]);
+      const svgElement = simplePie([2, 1, 1, 2]);
       borderedPieRef.current.appendChild(svgElement);
     }
     if (borderLessPieRef.current) {
-      const svgElement = simplePieElement([2, 1, 1, 2], {
+      const svgElement = simplePie([2, 1, 1, 2], {
         borderColor: "transparent",
       });
       borderLessPieRef.current.appendChild(svgElement);
     }
     if (borderedDoughnutRef.current) {
-      const svgElement = simpleDoughnutElement([2, 1, 1, 2], {
+      const svgElement = simpleDoughnut([2, 1, 1, 2], {
         borderWidth: 3,
       });
       borderedDoughnutRef.current.appendChild(svgElement);
     }
     if (borderLessDoughnutRef.current) {
-      const svgElement = simpleDoughnutElement([2, 1, 1, 2], {
+      const svgElement = simpleDoughnut([2, 1, 1, 2], {
         borderColor: "transparent",
       });
       borderLessDoughnutRef.current.appendChild(svgElement);
@@ -52,7 +52,7 @@ export function App(): JSX.Element {
         doughnut.classList.add("simple-pie-container");
         doughnut.appendChild(valueElement);
         doughnut.appendChild(
-          simpleDoughnutElement(set, { borderColor: "transparent" })
+          simpleDoughnut(set, { borderColor: "transparent" })
         );
 
         doughnutSetContainer1.current.appendChild(doughnut);
@@ -68,8 +68,8 @@ export function App(): JSX.Element {
         valueElement.innerText = String(value);
         pie.classList.add("simple-pie-container");
         doughnut.classList.add("simple-pie-container");
-        pie.appendChild(simplePieElement([value]));
-        doughnut.appendChild(simpleDoughnutElement([value]));
+        pie.appendChild(simplePie([value]));
+        doughnut.appendChild(simpleDoughnut([value]));
 
         wrapper.appendChild(valueElement);
         wrapper.appendChild(pie);
