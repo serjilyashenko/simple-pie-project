@@ -25,7 +25,7 @@ yarn add simple-pie
 <script>
     const svgPieElement = simplePie([2, 1, 1, 2]);
     document.getElementById('pie-container').appendChild(svgPieElement);
-  
+
     const svgDoughnutElement = simpleDoughnut([2, 1, 1, 2]);
     document.getElementById('doughnut-container').appendChild(svgDoughnutElement);
 </script>
@@ -50,7 +50,7 @@ type TPieOptions = {
   borderWidth?: number;
 };
 
-function simplePieElement(
+function simplePie(
   values: number[],
   options?: TPieOptions
 ): SVGElement;
@@ -60,7 +60,7 @@ type TDoughnutOptions = TPieOptions & {
   inner?: number;                         // 0..1 - percent from outer radius
 };
 
-function simpleDoughnutElement(
+function simpleDoughnut(
   values: number[],
   options: TDoughnutOptions = {}
 ): SVGElement
@@ -68,6 +68,17 @@ function simpleDoughnutElement(
 
 If you need borderless diagram, just set `borderColor: "transparent"` or `borderWidth: 0`
 
-### Old version api
+### ❌Old version interface
 
-The old version of pie diagram is still supported. However it is depricated. Please use the new one.
+The old version of pie diagram is still supported. However, it is ❌deprecated. Please use the new one.
+
+```ts
+export function simplePie(
+  values: number[],
+  pallet?: string[],
+  borderColor?: string,
+  borderWidth?: number
+): SVGElement;
+```
+
+`simpleDoughnut` has only new version of the interface

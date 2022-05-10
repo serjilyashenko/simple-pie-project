@@ -14,7 +14,7 @@ The project includes two npm packages:
 
 You can find them in the `/src/packages` folder. If you want to use diagram package or check it out, please look [this](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie), and [that](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie) (for react wrapper).
 
-Meanwhile, the current project is for simple-pie and react-simple-pie development and demo.
+Meanwhile, the current project is for simple-pie and react-simple-pie development and their demo.
 
 ## Installation
 
@@ -42,10 +42,8 @@ import SVGPie from "react-simple-pie";
 * simple-pie - package
 * react-simple-pie - package
 
-Main project imports their sources as it.
+Main project imports their sources as it. Without building.
 `package.json` files in packages are necessary only for build and publish packages to npm.
-
-**Note:** Be careful. main project `react-simple-pie` and `src/package/react-simple-pie` have the similar name.
 
 ## Publish npm packages
 
@@ -57,6 +55,7 @@ npm run npm:publish
 
 ```bash
 cd src/packages/react-simple-pie
+npm install
 npm run build
 npm run npm:publish
 ```
