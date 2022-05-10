@@ -1,6 +1,6 @@
 {
   "name": "simple-pie",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram",
   "main": "dist/simple-pie.min.js",
