@@ -108,7 +108,7 @@ const isBrowser =
 declare global {
   interface Window {
     simplePie: typeof simplePieElement | undefined;
-    simpleDoughnut: typeof simpleDoughnut | undefined;
+    simpleDoughnut: typeof simpleDoughnutElement | undefined;
   }
 }
 
@@ -118,7 +118,7 @@ if (isBrowser) {
 }
 
 export const simplePie = simplePieElement;
-export const simpleDdoughnut = simpleDoughnutElement;
+export const simpleDoughnut = simpleDoughnutElement;
 
 export {
   sectorPathFactory,
