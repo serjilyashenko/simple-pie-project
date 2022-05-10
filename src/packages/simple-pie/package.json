@@ -1,6 +1,6 @@
 {
   "name": "simple-pie",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram",
   "main": "dist/simple-pie.min.js",
@@ -11,5 +11,12 @@
     "lint": "eslint src"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
+  "keywords": [
+    "svg",
+    "diagram",
+    "pie",
+    "pie-chart"
+  ],
+  "repository": "https://github.com/serjilyashenko/simple-pie-project",
   "license": "MIT"
 }

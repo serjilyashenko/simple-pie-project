@@ -3,7 +3,6 @@
   "version": "1.0.17",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram react component",
-  "repository": "serjilyashenko/react-simple-pie",
   "main": "dist/index.min.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -16,6 +15,8 @@
     "react-dom": ">=15"
   },
   "author": "Serge Ilyashenko <serj.ilyashenko@gmail.com>",
+  "keywords": ["svg", "diagram", "pie", "pie-chart"],
+  "repository": "https://github.com/serjilyashenko/simple-pie-project",
   "license": "MIT",
   "dependencies": {
     "simple-pie": "./../pa"
