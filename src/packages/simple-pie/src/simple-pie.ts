@@ -122,6 +122,7 @@ export const simpleDoughnut = simpleDoughnutElement;
 
 export {
   sectorPathFactory,
+  doughnutSectorPathFactory,
   TSectorCoordinate,
   TPieOptions,
   TDoughnutOptions,

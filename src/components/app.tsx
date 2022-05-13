@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
 
-// import { SimplePie } from "../packages/react-simple-pie/src";
 
-import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie";
-// import {simplePie, simpleDoughnut} from "simple-pie"; // TODO: test with real package. And don't forget to change version in package.json
+import {simplePie, simpleDoughnut} from "simple-pie";
+// import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
+
+import {SimplePie} from "react-simple-pie"
+// import { SimplePie } from "../packages/react-simple-pie/src"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
 
 import "./app.css";
 
@@ -84,10 +86,10 @@ export function App(): JSX.Element {
       <h1>React Simple Pie</h1>
       <section>
         <div className="simple-pie-container">
-          {/*<SimplePie values={[1, 2, 1, 2]} />*/}
+          <SimplePie values={[1, 2, 1, 2]} />
         </div>
         <div className="simple-pie-container">
-          {/*<SimplePie values={[1, 1, 1]} />*/}
+          <SimplePie values={[1, 1, 1]} />
         </div>
       </section>
       <section>

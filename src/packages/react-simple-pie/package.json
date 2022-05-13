@@ -15,10 +15,15 @@
     "react-dom": ">=15"
   },
   "author": "Serge Ilyashenko <serj.ilyashenko@gmail.com>",
-  "keywords": ["svg", "diagram", "pie", "pie-chart"],
+  "keywords": [
+    "svg",
+    "diagram",
+    "pie",
+    "pie-chart"
+  ],
   "repository": "https://github.com/serjilyashenko/simple-pie-project",
   "license": "MIT",
   "dependencies": {
-    "simple-pie": "./../pa"
+    "simple-pie": "^1.1.4"
   }
 }

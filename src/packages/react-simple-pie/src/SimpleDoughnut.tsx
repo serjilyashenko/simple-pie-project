@@ -9,7 +9,7 @@ export function SimplePie(props: TDoughnutProps): JSX.Element {
     values,
     palette = defaultPalette,
     borderColor = "black",
-    borderWidth,
+    borderWidth = 1,
   } = props;
 
   const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(values);
