@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Simple Pie Project<br/>🥧 🍩</h1>
+  <h1>Simple Pie Project<br/>🔧 🥧 🍩</h1>
   <p>Super light weight and super simple <strong>SVG</strong> pie/doughnut diagram packages</p>
 </div>
 
@@ -44,6 +44,8 @@ Now it is possible to change `simple-pie` sources in `/src/packages/src`.
 
 WIP\
 TODO: tradeoff
+
+**?** There is no need to `npm install` in react-simple-pie package. It takes it from `simple-pie-project` node_modules.
 
 ## `simple-pie` npm package publish
 
