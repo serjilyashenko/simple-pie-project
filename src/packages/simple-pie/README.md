@@ -36,14 +36,14 @@ yarn add simple-pie
 </script>
 ```
 
-Since `simplePie` and `simpleDoughnut` return regular svg, you can use it as you wish.
-
 ```js
-import {simplePie, simpleDoughnut} from "react-simple-pie";
+import {simplePie, simpleDoughnut} from "simple-pie";
 
 const svgPie = simplePie([2, 1, 1, 2]);
 const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
 ```
+
+Since `simplePie` and `simpleDoughnut` return regular svg, you can use it as you wish.
 
 **Note:** svg `height` and `width` are `100%`, so it trys to extend itself to available space. Thus, you should have wrapper with dimensions for your simple-pie diagram.
 

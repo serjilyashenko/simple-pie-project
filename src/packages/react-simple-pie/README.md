@@ -27,13 +27,32 @@ import {SimplePie, SimpleDoughnut} from "react-simple-pie"
 export default function YourComponent() {
   return (
     <section>
-      <div className="simple-pie-container">
+      <div style={{width: 200, height: 200}}>
         <SimpleDoughnut values={[1, 2, 1, 2]} />
       </div>*/}
-      <div className="simple-pie-container">
+      <div style={{width: 200, height: 200}}>
         <SimpleDoughnut values={[1, 1, 1]} borderWidth={4} borderColor="green" />
       </div>
     </section>
   );
 }
+```
+
+Since `simplePie` and `simpleDoughnut` return regular svg, you can use it as you wish.
+
+**Note:** svg `height` and `width` are `100%`, so it trys to extend itself to available space. Thus, you should have wrapper with dimensions for your simple-pie diagram.
+
+## Interface
+
+```ts
+export type TPieProps = {
+  values: number[];
+  palette?: string[];
+  borderColor?: string;
+  borderWidth?: number;
+};
+
+export type TDoughnutProps = TPieProps & {
+  innerRadius?: number;
+};
 ```
