@@ -53,6 +53,6 @@ export type TPieProps = {
 };
 
 export type TDoughnutProps = TPieProps & {
-  innerRadius?: number;
+  innerRadius?: number; // 0..1 - percent from outer radius
 };
 ```
