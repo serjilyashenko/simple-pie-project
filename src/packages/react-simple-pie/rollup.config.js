@@ -2,15 +2,15 @@ import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
 
 export default {
-  input: "src/SimplePie.tsx",
+  input: "src/index.ts",
   output: [
     {
-      file: `dist/SimplePie.js`,
+      file: `dist/index.js`,
       sourcemap: true,
       format: "cjs",
     },
     {
-      file: `dist/SimplePie.min.js`,
+      file: `dist/index.min.js`,
       sourcemap: true,
       format: "cjs",
       plugins: [terser()],

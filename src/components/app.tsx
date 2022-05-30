@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import {simplePie, simpleDoughnut} from "simple-pie";
 // import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
 
-import {SimplePie} from "react-simple-pie"
+import {SimplePie, SimpleDoughnut} from "react-simple-pie"
 // import { SimplePie, SimpleDoughnut } from "../packages/react-simple-pie/src"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
 
 import "./app.css";
@@ -88,18 +88,18 @@ export function App(): JSX.Element {
         <div className="simple-pie-container">
           <SimplePie values={[1, 2, 1, 2]} />
         </div>
-        {/*<div className="simple-pie-container">*/}
-        {/*  <SimplePie values={[1, 1, 1]} borderWidth={4} />*/}
-        {/*</div>*/}
+        <div className="simple-pie-container">
+          <SimplePie values={[1, 1, 1]} borderWidth={4} />
+        </div>
       </section>
-      {/*<section>*/}
-      {/*  <div className="simple-pie-container">*/}
-      {/*    <SimpleDoughnut values={[1, 2, 1, 2]} />*/}
-      {/*  </div>*/}
-      {/*  <div className="simple-pie-container">*/}
-      {/*    <SimpleDoughnut values={[1, 1, 1]} borderWidth={4} borderColor="green" />*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+      <section>
+        <div className="simple-pie-container">
+          <SimpleDoughnut values={[1, 2, 1, 2]} />
+        </div>
+        <div className="simple-pie-container">
+          <SimpleDoughnut values={[1, 1, 1]} borderWidth={4} borderColor="green" />
+        </div>
+      </section>
       <section>
         <div className="simple-pie-container" ref={borderedPieRef} />
         <div className="simple-pie-container" ref={borderLessPieRef} />
