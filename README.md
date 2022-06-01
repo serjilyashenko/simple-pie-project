@@ -32,8 +32,8 @@ Comment npm package import\
 And uncomment local `src/packages/simple-pie` import in `src/components/app.tsx` file. Like this:
 
 ```ts
-// import {SimplePie} from "react-simple-pie"
-import { SimplePie } from "../packages/react-simple-pie/src/simple-pie";
+// import {simplePie, simpleDoughnut} from "simple-pie";
+import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie";
 ```
 
 Now it is possible to change `simple-pie` sources in `/src/packages/src`.
@@ -42,10 +42,23 @@ Now it is possible to change `simple-pie` sources in `/src/packages/src`.
 
 ## `react-simple-pie` development
 
-WIP\
-TODO: tradeoff
+**Tradeoff:** `react-simple-pie` has `simple-pie` as dependency. Thus, it is necessary to deploy `simple-pie` version
+before `react-simple-pie` can use this changes during development.
 
-**?** There is no need to `npm install` in react-simple-pie package. It takes it from `simple-pie-project` node_modules.
+**Note** There is no need to `npm install` in react-simple-pie folder. It takes the dependencies from `simple-pie-project`
+node_modules.
+
+Comment npm package import\
+And uncomment local `src/packages/simple-pie` import in `src/components/app.tsx` file. Like this:
+
+```ts
+// import {SimplePie, SimpleDoughnut} from "react-simple-pie"
+import { SimplePie, SimpleDoughnut } from "../packages/react-simple-pie/src";
+```
+
+Now it is possible to change `simple-pie` sources in `/src/packages/src`.
+
+**Important:** After development, it is important to return comments of imports back and check if it works fine with real published package.
 
 ## `simple-pie` npm package publish
 
@@ -61,7 +74,6 @@ npm run npm:publish
 
 ```bash
 cd src/packages/react-simple-pie
-npm install
 npm run build
 npm run npm:publish
 ```
