@@ -11,7 +11,13 @@
 .grid {
   display: grid;
   justify-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .example-item {
