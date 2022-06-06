@@ -8,6 +8,14 @@ body {
 }
 
 code {
+  color: #f7f7f7;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+pre {
+  background-color: #011627;
+  border-radius: 20px;
+  padding: 16px;
+  text-align: left;
 }

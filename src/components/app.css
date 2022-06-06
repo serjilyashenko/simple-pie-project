@@ -1,11 +1,24 @@
 .app {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 30px auto;
   padding: 20px;
 }
 
-.simple-pie-container {
+.title {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.example-item {
+  text-align: center;
+}
+
+.pie {
   display: inline-block;
   width: 200px;
-  height: 200px;
 }
