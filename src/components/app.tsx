@@ -13,7 +13,14 @@ export function App(): JSX.Element {
     <main className="app">
       <article>
         <h2 className="title">
-          React Simple Pie
+          React Simple Pie{" "}
+          <a
+            href="https://github.com/serjilyashenko/simple-pie-project/tree/master/src/packages/react-simple-pie"
+            rel="noreferrer"
+            target="__blank"
+          >
+            <img alt="github" className="github" src="./github-icon.png" />
+          </a>
           <br />
           ⚛️ 🥧 🍩
         </h2>
@@ -69,7 +76,14 @@ export function App(): JSX.Element {
 
       <article>
         <h2 className="title">
-          Simple Pie
+          Simple Pie{" "}
+          <a
+            href="https://github.com/serjilyashenko/simple-pie-project/tree/master/src/packages/simple-pie"
+            rel="noreferrer"
+            target="__blank"
+          >
+            <img alt="github" className="github" src="./github-icon.png" />
+          </a>
           <br />
           🥧 🍩
         </h2>

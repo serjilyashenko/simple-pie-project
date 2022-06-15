@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.github {
+  width: 30px
+}
+
 .grid {
   display: grid;
   justify-items: center;
