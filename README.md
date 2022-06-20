@@ -7,6 +7,8 @@
 
 This project creates simple svg pie and doughnut charts for infographics like graphs ant others.
 
+Check out the demo [here](https://simple-pie.netlify.app/)
+
 ## Motivation
 
 Some time ago I had to implement a graph chart. And the every node of the graph would be tiny pie chart.
