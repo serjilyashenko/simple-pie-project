@@ -96,7 +96,6 @@ export function NetworkUseCase(): JSX.Element {
           interaction: {
             zoomView: false,
             zoomSpeed: 1,
-            dragView: false,
           },
         }}
       />
