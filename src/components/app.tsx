@@ -7,10 +7,21 @@ import { SimplePie, SimpleDoughnut } from "react-simple-pie";
 // import { SimplePie, SimpleDoughnut } from "../packages/react-simple-pie/src"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
 
 import "./app.css";
+import { NetworkUseCase } from "./network-use-case";
 
 export function App(): JSX.Element {
   return (
     <main className="app">
+      <article>
+        <h2 className="title">
+          Network Graph Demo
+          <br />
+          🕸 🍩
+        </h2>
+        <hr />
+        <NetworkUseCase />
+      </article>
+
       <article>
         <h2 className="title">
           React Simple Pie{" "}
