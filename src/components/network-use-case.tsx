@@ -94,7 +94,7 @@ export const NetworkUseCase = memo(function NetworkUseCase(): JSX.Element {
   }, []);
 
   return (
-    <div style={{ height: 400 }}>
+    <div style={{ height: 400, width: "100%" }}>
       <Graph
         key={refreshKey}
         graph={graph}
