@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { debounce } from "lodash";
 import Graph from "react-vis-network-graph";
 
 import { simplePie } from "simple-pie";
@@ -74,9 +75,28 @@ const graph = {
 };
 
 export function NetworkUseCase(): JSX.Element {
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+
+    window.addEventListener(
+      "resize",
+      debounce(function resize() {
+        setRefreshKey(random10());
+      }, 500),
+      {
+        signal: abortController.signal,
+      }
+    );
+
+    return () => abortController.abort();
+  }, []);
+
   return (
     <div style={{ height: 400 }}>
       <Graph
+        key={refreshKey}
         graph={graph}
         options={{
           edges: {
@@ -96,6 +116,7 @@ export function NetworkUseCase(): JSX.Element {
           interaction: {
             zoomView: false,
             zoomSpeed: 1,
+            dragView: false,
           },
         }}
       />
