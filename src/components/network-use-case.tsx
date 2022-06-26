@@ -2,79 +2,15 @@ import React, { useEffect, useState } from "react";
 import { debounce } from "lodash";
 import Graph from "react-vis-network-graph";
 
-import { simplePie } from "simple-pie";
+import "./network-use-case.css";
 
-function random10() {
-  return Math.ceil(Math.random() * 10);
-}
-
-function getRandomPieDataUri() {
-  const values = Array.from({ length: random10() }, random10);
-  const element = simplePie(values);
-  element.setAttribute("width", "70");
-  element.setAttribute("height", "70");
-
-  const svg = new XMLSerializer().serializeToString(element);
-
-  return `data:image/svg+xml;base64,${btoa(svg)}`;
-}
-
-const graph = {
-  nodes: [
-    {
-      id: 1,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-    {
-      id: 2,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-    {
-      id: 3,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-    {
-      id: 4,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-    {
-      id: 5,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-    {
-      id: 6,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-    {
-      id: 7,
-      shape: "image",
-      image: getRandomPieDataUri(),
-      shapeProperties: { useImageSize: true },
-    },
-  ],
-  edges: [
-    { from: 1, to: 2 },
-    { from: 1, to: 3 },
-    { from: 2, to: 4 },
-    { from: 2, to: 5 },
-    { from: 6, to: 2 },
-    { from: 7, to: 2 },
-  ],
+type PropsType = {
+  getRandomPieDataUri: () => string;
 };
 
-export function NetworkUseCase(): JSX.Element {
+export function NetworkUseCase(props: PropsType): JSX.Element {
+  const { getRandomPieDataUri } = props;
+
   const [ready, setReady] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
 
@@ -90,7 +26,7 @@ export function NetworkUseCase(): JSX.Element {
     window.addEventListener(
       "resize",
       debounce(function resize() {
-        setRefreshKey(random10());
+        setRefreshKey(Math.ceil(Math.random() * 10));
       }, 500),
       {
         signal: abortController.signal,
@@ -99,6 +35,61 @@ export function NetworkUseCase(): JSX.Element {
 
     return () => abortController.abort();
   }, []);
+
+  const graph = {
+    nodes: [
+      {
+        id: 1,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+      {
+        id: 2,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+      {
+        id: 3,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+      {
+        id: 4,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+      {
+        id: 5,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+      {
+        id: 6,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+      {
+        id: 7,
+        shape: "image",
+        image: getRandomPieDataUri(),
+        shapeProperties: { useImageSize: true },
+      },
+    ],
+    edges: [
+      { from: 1, to: 2 },
+      { from: 1, to: 3 },
+      { from: 2, to: 4 },
+      { from: 2, to: 5 },
+      { from: 6, to: 2 },
+      { from: 7, to: 2 },
+    ],
+  };
 
   return (
     <div className="network-container">

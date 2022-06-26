@@ -9,6 +9,19 @@ import { SimplePie, SimpleDoughnut } from "react-simple-pie";
 import "./app.css";
 import { NetworkUseCase } from "./network-use-case";
 
+function getRandomPieDataUri() {
+  const values = Array.from({ length: Math.ceil(Math.random() * 10) }, () =>
+    Math.ceil(Math.random() * 10)
+  );
+  const element = simplePie(values);
+  element.setAttribute("width", "70");
+  element.setAttribute("height", "70");
+
+  const svg = new XMLSerializer().serializeToString(element);
+
+  return `data:image/svg+xml;base64,${btoa(svg)}`;
+}
+
 export function App(): JSX.Element {
   return (
     <main className="app">
@@ -19,7 +32,7 @@ export function App(): JSX.Element {
           🕸 🍩
         </h2>
         <hr />
-        <NetworkUseCase />
+        <NetworkUseCase getRandomPieDataUri={getRandomPieDataUri} />
       </article>
 
       <article>
