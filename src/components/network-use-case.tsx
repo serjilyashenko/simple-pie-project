@@ -75,10 +75,13 @@ const graph = {
 };
 
 export const NetworkUseCase = memo(function NetworkUseCase(): JSX.Element {
+  const [ready, setReady] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     const abortController = new AbortController();
+
+    setTimeout(() => setReady(true), 500);
 
     window.addEventListener(
       "resize",
@@ -92,6 +95,10 @@ export const NetworkUseCase = memo(function NetworkUseCase(): JSX.Element {
 
     return () => abortController.abort();
   }, []);
+
+  if (!ready) {
+    return <div style={{ height: 400 }}></div>;
+  }
 
   return (
     <div style={{ height: 400, width: "100%" }}>
