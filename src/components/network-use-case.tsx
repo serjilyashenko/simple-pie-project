@@ -74,14 +74,18 @@ const graph = {
   ],
 };
 
-export const NetworkUseCase = memo(function NetworkUseCase(): JSX.Element {
+export function NetworkUseCase(): JSX.Element {
   const [ready, setReady] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
-    const abortController = new AbortController();
+    const timer = setTimeout(() => setReady(true), 100);
 
-    setTimeout(() => setReady(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const abortController = new AbortController();
 
     window.addEventListener(
       "resize",
@@ -96,37 +100,35 @@ export const NetworkUseCase = memo(function NetworkUseCase(): JSX.Element {
     return () => abortController.abort();
   }, []);
 
-  if (!ready) {
-    return <div style={{ height: 400 }}></div>;
-  }
-
   return (
-    <div style={{ height: 400, width: "100%" }}>
-      <Graph
-        key={refreshKey}
-        graph={graph}
-        options={{
-          edges: {
-            smooth: {
-              roundness: 0.45,
+    <div className="network-container">
+      {ready && (
+        <Graph
+          key={refreshKey}
+          graph={graph}
+          options={{
+            edges: {
+              smooth: {
+                roundness: 0.45,
+              },
             },
-          },
-          physics: {
-            barnesHut: {
-              theta: 0.3,
-              gravitationalConstant: -5850,
-              centralGravity: 0.95,
+            physics: {
+              barnesHut: {
+                theta: 0.3,
+                gravitationalConstant: -5850,
+                centralGravity: 0.95,
+              },
+              minVelocity: 0.75,
+              timestep: 0.29,
             },
-            minVelocity: 0.75,
-            timestep: 0.29,
-          },
-          interaction: {
-            zoomView: false,
-            zoomSpeed: 1,
-            dragView: false,
-          },
-        }}
-      />
+            interaction: {
+              zoomView: false,
+              zoomSpeed: 1,
+              dragView: false,
+            },
+          }}
+        />
+      )}
     </div>
   );
-});
+}
