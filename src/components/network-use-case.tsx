@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { debounce } from "lodash";
 import Graph from "react-vis-network-graph";
 
@@ -74,7 +74,7 @@ const graph = {
   ],
 };
 
-export function NetworkUseCase(): JSX.Element {
+export const NetworkUseCase = memo(function NetworkUseCase(): JSX.Element {
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
@@ -122,4 +122,4 @@ export function NetworkUseCase(): JSX.Element {
       />
     </div>
   );
-}
+});
