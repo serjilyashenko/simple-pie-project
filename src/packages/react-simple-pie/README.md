@@ -43,7 +43,7 @@ export default function YourComponent() {
     <section>
       <div style={{width: 200, height: 200}}>
         <SimpleDoughnut values={[1, 2, 1, 2]} />
-      </div>*/}
+      </div>
       <div style={{width: 200, height: 200}}>
         <SimpleDoughnut values={[1, 1, 1]} borderWidth={4} borderColor="green" />
       </div>
