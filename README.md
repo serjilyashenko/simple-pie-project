@@ -20,6 +20,8 @@ And for obvious reasons it is not possible to use HighCharts, Chart.js or other 
 Well the `simple-pie` does exactly this thing. It generates tiny svg pie which can be integrated into network graph or
 map or any other case, when you can't use data-visualization libraries.
 
+![net and map cases](https://raw.githubusercontent.com/serjilyashenko/simple-pie-project/master/public/map-and-net-case.png)
+
 ## Packages
 
 The project includes two npm packages:
