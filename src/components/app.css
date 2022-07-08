@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.app article {
+  margin-bottom: 80px;
+}
+
 .title {
   text-align: center;
 }

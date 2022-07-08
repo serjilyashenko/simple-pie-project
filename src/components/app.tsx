@@ -37,6 +37,16 @@ export function App(): JSX.Element {
 
       <article>
         <h2 className="title">
+          Map Demo
+          <br />
+          🌏 🍩
+        </h2>
+        <hr />
+        <img alt="map" src="/map-case.png" width="100%" />
+      </article>
+
+      <article>
+        <h2 className="title">
           React Simple Pie{" "}
           <a
             href="https://github.com/serjilyashenko/simple-pie-project/tree/master/src/packages/react-simple-pie"
