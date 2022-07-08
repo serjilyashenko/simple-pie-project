@@ -1,6 +1,6 @@
 {
   "name": "react-simple-pie",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram react component",
   "main": "dist/index.min.js",
@@ -24,6 +24,6 @@
   "repository": "https://github.com/serjilyashenko/simple-pie-project",
   "license": "MIT",
   "dependencies": {
-    "simple-pie": "^1.1.6"
+    "simple-pie": "^1.1.7"
   }
 }
