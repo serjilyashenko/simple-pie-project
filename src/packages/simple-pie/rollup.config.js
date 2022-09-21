@@ -5,11 +5,6 @@ export default {
   input: "src/simple-pie.ts",
   output: [
     {
-      file: `dist/simple-pie.js`,
-      sourcemap: true,
-      format: "cjs",
-    },
-    {
       file: `dist/simple-pie.min.js`,
       sourcemap: true,
       format: "cjs",

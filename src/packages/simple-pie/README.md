@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Simple Pie<br/>🥧 🍩</h1>
-  <p>Super light weight and super simple svg pie/doughnut diagram</p>
+  <p>Super light weight (4.4kb) and super simple svg pie/doughnut diagram</p>
 </div>
 
 <hr/>
@@ -37,6 +37,14 @@ yarn add simple-pie
 
 ## Use
 
+ESM:
+```js
+import {simplePie, simpleDoughnut} from "simple-pie";
+
+const svgPie = simplePie([2, 1, 1, 2]);
+const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
+```
+HTML:
 ```html
 <div id="pie-container"></div>
 <div id="doughnut-container"></div>
@@ -49,13 +57,6 @@ yarn add simple-pie
     const svgDoughnutElement = simpleDoughnut([2, 1, 1, 2]);
     document.getElementById('doughnut-container').appendChild(svgDoughnutElement);
 </script>
-```
-
-```js
-import {simplePie, simpleDoughnut} from "simple-pie";
-
-const svgPie = simplePie([2, 1, 1, 2]);
-const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
 ```
 
 Since `simplePie` and `simpleDoughnut` return regular svg, you can use it as you wish.
