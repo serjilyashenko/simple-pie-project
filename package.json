@@ -3,6 +3,14 @@
   "description": "Super light weight svg pie diagram React component And SvgPie Constructor",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "BROWSER=none react-scripts start",
+    "prettier": "prettier --write .",
+    "lint": "eslint .",
+    "build": "react-scripts build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@types/node": "12.20.11",
     "@types/react": "17.0.2",
@@ -25,14 +33,6 @@
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-typescript2": "0.31.2",
     "source-map-explorer": "2.5.2"
-  },
-  "scripts": {
-    "start": "BROWSER=none react-scripts start",
-    "prettier": "prettier --write .",
-    "lint": "eslint .",
-    "build": "react-scripts build",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

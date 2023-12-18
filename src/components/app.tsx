@@ -1,10 +1,21 @@
 import React from "react";
 
 import { simplePie, simpleDoughnut } from "simple-pie";
-// import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
+// import {
+//   simplePie,
+//   simpleDoughnut,
+// } from "../packages/simple-pie/src/simple-pie"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
+// import {
+//   simplePie,
+//   simpleDoughnut,
+// } from "../packages/simple-pie/dist/simple-pie.min.js"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
 
 import { SimplePie, SimpleDoughnut } from "react-simple-pie";
 // import { SimplePie, SimpleDoughnut } from "../packages/react-simple-pie/src"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
+// import {
+//   SimplePie,
+//   SimpleDoughnut,
+// } from "../packages/react-simple-pie/dist/index.min.js"; // Don't commit this line uncommented. This is for Development purposes. Checkout README, please
 
 import "./app.css";
 import { NetworkUseCase } from "./network-use-case";
