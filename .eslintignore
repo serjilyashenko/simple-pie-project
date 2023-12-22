@@ -1,4 +1,1 @@
-/packages/*/cjs/*.js
-/packages/*/esm/*.js
-/packages/*/umd/*.js
-/packages/*/dist/*
+**/dist/*
