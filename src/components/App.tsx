@@ -1,5 +1,3 @@
-import React from "react";
-
 import { simplePie, simpleDoughnut } from "simple-pie";
 // import {
 //   simplePie,
@@ -22,7 +20,7 @@ import { NetworkUseCase } from "./network-use-case";
 
 function getRandomPieDataUri() {
   const values = Array.from({ length: Math.ceil(Math.random() * 10) }, () =>
-    Math.ceil(Math.random() * 10)
+    Math.ceil(Math.random() * 10),
   );
   const element = simplePie(values);
   element.setAttribute("width", "70");
@@ -152,7 +150,7 @@ export function App(): JSX.Element {
                 pie?.appendChild(
                   simplePie([2, 1, 1, 2], {
                     borderColor: "transparent",
-                  })
+                  }),
                 )
               }
             />
@@ -172,7 +170,7 @@ export function App(): JSX.Element {
                 pie?.appendChild(
                   simpleDoughnut([2, 1, 1, 2], {
                     borderWidth: 3,
-                  })
+                  }),
                 )
               }
             />{" "}
@@ -191,7 +189,7 @@ export function App(): JSX.Element {
                   simpleDoughnut([2, 1, 1, 2], {
                     borderColor: "transparent",
                     inner: 0.5,
-                  })
+                  }),
                 )
               }
             />
@@ -213,8 +211,8 @@ export function App(): JSX.Element {
         <div className="grid">
           {Array.from({ length: 16 }, () =>
             Array.from({ length: Math.floor(Math.random() * 10 + 1) }, () =>
-              Math.floor(Math.random() * 101)
-            )
+              Math.floor(Math.random() * 101),
+            ),
           ).map((set: number[]) => (
             <section key={set[0] + Math.random()} className="example-item">
               <div className="pie">
@@ -222,7 +220,7 @@ export function App(): JSX.Element {
               </div>
               <pre>
                 <code>{`<SimpleDoughnut\n  borderColor="transparent"\n  values={${JSON.stringify(
-                  set
+                  set,
                 )}}\n/>`}</code>
               </pre>
             </section>

@@ -38,13 +38,13 @@ Initially `simple-pie-project` imports the last versions of `simple-pie` and `re
 
 ```bash
   npm install
-  npm start
+  npm dev
 ```
 
 ## `simple-pie` development
 
 Comment npm package import\
-And uncomment local `src/packages/simple-pie` import in `src/components/app.tsx` file. Like this:
+And uncomment local `src/packages/simple-pie` import in `src/components/App.tsx` file. Like this:
 
 ```ts
 // import {simplePie, simpleDoughnut} from "simple-pie";
@@ -64,7 +64,7 @@ before `react-simple-pie` can use this changes during development.
 node_modules.
 
 Comment npm package import\
-And uncomment local `src/packages/simple-pie` import in `src/components/app.tsx` file. Like this:
+And uncomment local `src/packages/simple-pie` import in `src/components/App.tsx` file. Like this:
 
 ```ts
 // import {SimplePie, SimpleDoughnut} from "react-simple-pie"
