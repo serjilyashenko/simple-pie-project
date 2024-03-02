@@ -60,6 +60,7 @@ export const NetworkUseCase = memo(function NetworkUseCase(
       },
     ]);
 
+    // @ts-ignore
     const edges = new DataSet([
       { from: 1, to: 2 },
       { from: 1, to: 3 },
@@ -71,12 +72,18 @@ export const NetworkUseCase = memo(function NetworkUseCase(
 
     // create a network
     const container = document.getElementById("network-container");
+
+    if (!container) {
+      throw new Error("html container not found");
+    }
+
     const data = {
       nodes: nodes,
       edges: edges,
     };
     const options = {};
 
+    // @ts-ignore
     new Network(container, data, options);
   }, []);
 
