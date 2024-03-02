@@ -1,4 +1,3 @@
-import React from "react";
 import type { TSectorCoordinate } from "simple-pie";
 import { castValuesToAngles, defaultPalette } from "simple-pie";
 import type { TDoughnutProps } from "./type";
@@ -26,7 +25,7 @@ export function SimpleDoughnut(props: TDoughnutProps): JSX.Element {
               color={palette[index]}
               innerRadius={innerRadius}
             />
-          )
+          ),
         )}
       </g>
     </svg>

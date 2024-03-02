@@ -1,4 +1,3 @@
-import React from "react";
 import { doughnutSectorPathFactory, TSectorCoordinate } from "simple-pie";
 
 type TSectorProps = {

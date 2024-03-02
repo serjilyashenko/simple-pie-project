@@ -1,4 +1,3 @@
-import React from "react";
 import { sectorPathFactory, TSectorCoordinate } from "simple-pie";
 
 type TSectorProps = {
