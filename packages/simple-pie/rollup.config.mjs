@@ -7,11 +7,16 @@ export default {
     {
       file: `dist/simple-pie.min.js`,
       sourcemap: true,
+      format: "esm",
+    },
+    {
+      file: `dist/simple-pie.min.cjs`,
+      sourcemap: true,
       format: "cjs",
-      plugins: [terser()],
     },
   ],
   plugins: [
+    terser(),
     typescript({
       rollupCommonJSResolveHack: false,
       clean: true,

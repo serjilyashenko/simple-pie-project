@@ -1,10 +1,11 @@
 {
   "name": "simple-pie",
-  "version": "1.1.10",
+  "version": "1.2.2",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram",
-  "main": "dist/simple-pie.min.js",
-  "types": "dist/simple-pie.d.ts",
+  "main": "./dist/simple-pie.min.cjs",
+  "module": "./dist/simple-pie.min.js",
+  "types": "./dist/simple-pie.d.ts",
   "files": [
     "dist"
   ],
