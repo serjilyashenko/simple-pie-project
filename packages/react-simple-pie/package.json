@@ -1,6 +1,6 @@
 {
   "name": "react-simple-pie",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram react component",
   "main": "dist/index.min.js",
@@ -12,6 +12,9 @@
     "build": "rm -rf dist && rollup --config",
     "npm:publish": "npm version patch && npm publish",
     "lint": "eslint src"
+  },
+  "dependencies": {
+    "simple-pie": "^1.2.2"
   },
   "peerDependencies": {
     "react": ">=15",
@@ -25,8 +28,5 @@
     "pie-chart"
   ],
   "repository": "https://github.com/serjilyashenko/simple-pie-project",
-  "license": "MIT",
-  "dependencies": {
-    "simple-pie": "^1.1.10"
-  }
+  "license": "MIT"
 }

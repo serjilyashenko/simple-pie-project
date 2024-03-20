@@ -19,8 +19,8 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-simple-pie": "1.0.24",
-    "simple-pie": "1.1.10",
+    "react-simple-pie": "*",
+    "simple-pie": "*",
     "vis-network": "9.1.9"
   },
   "devDependencies": {
