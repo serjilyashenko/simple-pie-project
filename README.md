@@ -5,6 +5,19 @@
 
 <hr/>
 
+homepage:\
+[![Netlify Status](https://api.netlify.com/api/v1/badges/03a6f213-460b-43ea-9a07-c7ef6ecb4358/deploy-status)](https://app.netlify.com/sites/simple-pie/deploys)
+
+simple-pie:\
+![NPM Version](https://img.shields.io/npm/v/simple-pie)
+
+
+react-simple-pie:\
+![NPM Version](https://img.shields.io/npm/v/react-simple-pie)
+
+
+## Overview
+
 This project creates simple svg pie and doughnut charts for infographics like graphs ant others.
 
 Check out the demo [here](https://simple-pie.netlify.app/)
