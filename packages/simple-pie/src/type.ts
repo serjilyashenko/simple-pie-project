@@ -1,7 +1,7 @@
 export type TSectorCoordinate = [number, number];
 
 export type TPieOptions = {
-  pallet?: Array<string>;
+  pallet?: string[];
   borderColor?: string;
   borderWidth?: number;
 };

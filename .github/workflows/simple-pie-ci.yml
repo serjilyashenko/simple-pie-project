@@ -49,6 +49,7 @@ jobs:
       - init
 #     - lint-and-test
     steps:
+      - run: ls
       - name: Go to simple-pie
         run: cd ./packages/simple-pie
       - name: Build
