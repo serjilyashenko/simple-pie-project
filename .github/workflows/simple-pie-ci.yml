@@ -53,7 +53,6 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    working-directory: ${{ github.workspace }}
     needs:
       - init
 #     - lint-and-test
