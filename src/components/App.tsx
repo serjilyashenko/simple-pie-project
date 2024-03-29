@@ -51,7 +51,11 @@ export function App(): JSX.Element {
           🌏 🍩
         </h2>
         <hr />
-        <img alt="map" src="/map-case.png" width="100%" />
+        <img
+          alt="map"
+          src="https://raw.githubusercontent.com/serjilyashenko/simple-pie-project/master/docs/images/map-case.png"
+          width="100%"
+        />
       </article>
 
       <article>
