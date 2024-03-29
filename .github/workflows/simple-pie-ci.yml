@@ -49,6 +49,8 @@ jobs:
       - init
 #     - lint-and-test
     steps:
+      - run: echo "${{ github.workspace }}"
+      - run: cd ${{ github.workspace }}
       - run: ls
       - name: Go to simple-pie
         run: cd ./packages/simple-pie
