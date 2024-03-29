@@ -7,11 +7,16 @@ export default {
     {
       file: `dist/index.min.js`,
       sourcemap: true,
+      format: "esm",
+    },
+    {
+      file: `dist/index.min.cjs`,
+      sourcemap: true,
       format: "cjs",
-      plugins: [terser()],
     },
   ],
   plugins: [
+    terser(),
     typescript({
       rollupCommonJSResolveHack: false,
       clean: true,
