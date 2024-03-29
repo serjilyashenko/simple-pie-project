@@ -1,9 +1,11 @@
 <div align="center">
   <h1>Simple Pie<br/>🥧 🍩</h1>
-  <p>Super light weight (4.4kb) and super simple svg pie/doughnut diagram</p>
+  <p>Super light weight and super simple svg pie/doughnut diagram</p>
 </div>
 
 <hr/>
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie)
 
 This project creates simple svg pie and doughnut charts for infographics like graphs and others.
 

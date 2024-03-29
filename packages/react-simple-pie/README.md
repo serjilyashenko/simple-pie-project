@@ -2,6 +2,10 @@
   <h1>React Simple Pie<br/>⚛️ 🥧 🍩</h1>
   <p>Super light weight and super simple svg pie/doughnut diagram</p>
 </div>
+<hr/>
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/min/react-simple-pie)
+
 
 This project creates simple svg pie and doughnut charts for infographics like graphs and others.
 

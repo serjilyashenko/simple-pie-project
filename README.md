@@ -1,20 +1,15 @@
 <div align="center">
-  <h1>Simple Pie Project<br/>🔧 🥧 🍩</h1>
+  <h1>Simple Pie Monorepo<br/>🔧 🥧 🍩</h1>
   <p>Super light weight and super simple <strong>SVG</strong> pie/doughnut diagram packages</p>
 </div>
 
 <hr/>
 
-homepage:\
-[![Netlify Status](https://api.netlify.com/api/v1/badges/03a6f213-460b-43ea-9a07-c7ef6ecb4358/deploy-status)](https://app.netlify.com/sites/simple-pie/deploys)
-
-simple-pie:\
-![NPM Version](https://img.shields.io/npm/v/simple-pie)
-
-
-react-simple-pie:\
-![NPM Version](https://img.shields.io/npm/v/react-simple-pie)
-
+| project           | badges                                                                                                                                                                                                                                                                             |
+|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| homepage          | [![Netlify Status](https://api.netlify.com/api/v1/badges/03a6f213-460b-43ea-9a07-c7ef6ecb4358/deploy-status)](https://app.netlify.com/sites/simple-pie/deploys)                                                                                                                    |
+| simple-pie        | ![NPM Version](https://img.shields.io/npm/v/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/react-simple-pie)    |
+| react-simple-pie  | ![NPM Version](https://img.shields.io/npm/v/react-simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/react-simple-pie)                                                   |
 
 ## Overview
 
