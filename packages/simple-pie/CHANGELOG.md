@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.2.6
+
+### Patch Changes
+
+- 6158a4f: simple-pie test-release #4
+
 ## 1.2.5
 
 ### Patch Changes
