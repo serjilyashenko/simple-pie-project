@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.2.5
+
+### Patch Changes
+
+- f12d42a: test relise #3
+
 ## 1.2.4
 
 ### Patch Changes
