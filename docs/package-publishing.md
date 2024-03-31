@@ -9,21 +9,20 @@ It uses the [github action](https://github.com/changesets/action) to your reposi
 sequenceDiagram
     actor C as Contributor
     participant PR as Pull request
-    participant GA as GitHub action
     participant M as master
+    participant GA as GitHub action
     participant NPM
     Note over C,NPM: Contribution
     C->>M: package update/fix
+    M--xGA: ignored
     Note over C,NPM: Release
     C->>M: create changeset
-    activate GA
-      GA->>PR: Increment version, delete changeset file
-    deactivate GA
-    C->>PR: Approve/merge release PR
-    PR->>M: merge
-    activate GA
-      GA->> NPM: publish
-    deactivate GA
+    M-->>GA: changeset detected
+    GA->>PR: The release PR: Increment version, delete changeset file
+    C-->>PR: Approve/merge the release PR
+    PR->>M: merge the release PR
+    M-->>GA: the updated version detected
+    GA->> NPM: publish
 ```
 
 To start releasing new npm package version use the following command:
