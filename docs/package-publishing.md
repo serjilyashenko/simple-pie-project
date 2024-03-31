@@ -2,7 +2,8 @@
 
 ## Changeset flow
 
-The project packages follow a changeset release flow.
+The project packages follow an automation changeset release flow.\
+It uses the [github action](https://github.com/changesets/action) to your repository in the CI pipeline.
 
 To start releasing new npm package version use the following command:
 
