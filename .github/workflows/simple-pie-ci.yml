@@ -1,0 +1,48 @@
+name: simple-pie-ci
+run-name: simple-pie npm package ci and publish 🚀
+
+on:
+  push:
+    branches:
+      - master
+#    paths:
+#      - packages/simple-pie/**/*
+#      - .changeset/**/*
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  simple-pie-ci:
+    name: simple-pie ci
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint and test
+        run: echo "TBD" # FIXME: add linting and tests
+
+      - name: Build
+        run: |
+          cd ${{ github.workspace }}/packages/simple-pie
+          npm run build
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
