@@ -1,0 +1,8 @@
+.network-container {
+  height: 400px;
+  width: 100%;
+}
+
+.network-container .vis-network:focus{
+  outline: none;
+}

@@ -37,7 +37,7 @@
     "rollup-plugin-typescript2": "0.31.2",
     "source-map-explorer": "2.5.3",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.2.8"
   },
   "eslintConfig": {
     "extends": [
