@@ -1,19 +1,20 @@
-name: simple-pie-ci
-run-name: simple-pie npm package ci and publish 🚀
+name: release-publish
+run-name: changesets flow for npm packages 🚀
 
 on:
   push:
     branches:
       - master
-#    paths:
-#      - packages/simple-pie/**/*
-#      - .changeset/**/*
+    paths:
+      - .github/workflows/release-publish.yml
+      - .changeset/**/*
+      - packages/**/*
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  simple-pie-ci:
-    name: simple-pie ci
+  release-publish-job:
+    name: Release Publish Job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -33,7 +34,7 @@ jobs:
       - name: Lint and test
         run: echo "TBD" # FIXME: add linting and tests
 
-      - name: Build
+      - name: Build # TODO: add react-simple-pie via turbo
         run: |
           cd ${{ github.workspace }}/packages/simple-pie
           npm run build
