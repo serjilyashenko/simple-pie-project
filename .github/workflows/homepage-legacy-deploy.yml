@@ -36,17 +36,18 @@ jobs:
       - name: Lint and test
         run: echo "TBD" # FIXME: add linting and tests
 
-      - name: Build # TODO: build via turbo
+      - name: Build # TODO: build via turbo ?
         run: |
-          cd ${{ github.workspace }}/apps/homepage-legacy
-          npm run build
+          npm run build --workspace=simple-pie
+          npm run build --workspace=react-simple-pie
+          npm run build --workspace=homepage-legacy
 
       - name: Deploy to Netlify
         id: netlify_deploy
         run: |
           netlify deploy \
-            --prod
-            --dir dist \
+            --prod \
+            --dir apps/homepage-legacy/dist \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_TOKEN }} \
-
+            --filter homepage-legacy \
