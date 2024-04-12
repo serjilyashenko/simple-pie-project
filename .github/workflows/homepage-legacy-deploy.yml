@@ -1,0 +1,52 @@
+name: homepage-legacy-deploy
+run-name: deploy homepage-legacy to netlify 🚀
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/homepage-legacy-deploy.yml
+      - packages/**/*
+      - apps/homepage-legacy/**/*
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  hompage-legacy-deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Netlify
+        run: npm install -g netlify-cli@17.22.1
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint and test
+        run: echo "TBD" # FIXME: add linting and tests
+
+      - name: Build # TODO: build via turbo
+        run: |
+          cd ${{ github.workspace }}/apps/homepage-legacy
+          npm run build
+
+      - name: Deploy to Netlify
+        id: netlify_deploy
+        run: |
+          netlify deploy \
+            --prod
+            --dir dist \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_TOKEN }} \
+
