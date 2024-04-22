@@ -28,3 +28,6 @@ yarn-error.log*
 /src/packages/*/cjs/
 /src/packages/*/esm/
 /src/packages/*/umd/
+
+# turbo
+.turbo

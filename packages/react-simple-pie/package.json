@@ -15,7 +15,11 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "simple-pie": "^1.2.2"
+    "simple-pie": "*"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.64",
+    "@types/react-dom": "18.2.21"
   },
   "peerDependencies": {
     "react": ">=15",
