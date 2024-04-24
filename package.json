@@ -13,7 +13,8 @@
     "changeset": "npx changeset",
     "release": "changeset publish",
     "prettier": "prettier --write .",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "postinstall": "turbo telemetry disable"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
