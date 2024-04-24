@@ -1,5 +1,5 @@
 name: release-publish
-run-name: changesets flow for npm packages 🚀
+run-name: changesets flow for npm packages 📦
 
 on:
   push:
