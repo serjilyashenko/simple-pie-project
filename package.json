@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "turbo build",
+    "build:packages": "turbo build --filter='./packages/*'",
     "changeset": "npx changeset",
     "release": "changeset publish",
     "prettier": "prettier --write .",
