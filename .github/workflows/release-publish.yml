@@ -34,10 +34,8 @@ jobs:
       - name: Lint and test
         run: echo "TBD" # FIXME: add linting and tests
 
-      - name: Build # TODO: add react-simple-pie via turbo
-        run: |
-          cd ${{ github.workspace }}/packages/simple-pie
-          npm run build
+      - name: Build
+        run: npm run build
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
