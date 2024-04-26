@@ -36,11 +36,8 @@ jobs:
       - name: Lint and test
         run: echo "TBD" # FIXME: add linting and tests
 
-      - name: Build # TODO: build via turbo ?
-        run: |
-          npm run build --workspace=simple-pie
-          npm run build --workspace=react-simple-pie
-          npm run build --workspace=homepage-legacy
+      - name: Build
+        run: npm run build
 
       - name: Deploy to Netlify
         id: netlify_deploy
