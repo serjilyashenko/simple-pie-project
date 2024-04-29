@@ -44,4 +44,24 @@ To check symlink state run the command:
 npm ls --link=true --depth=0
 ```
 
-🚧TBD
+> ⚠️ After add/remove workspaces, or change their locations on the filesystem, it is necessary  to re-run the install-command
+> from root to set up workspaces again
+
+## Building
+
+Build all workspaces
+```bash
+npm run build
+```
+
+Build all package workspaces (used by ci workflow read more in [package-publishing.md](./package-publishing.md))
+```bash
+npm run build:packages
+```
+
+Start releasing new npm package version (read more in [package-publishing.md](./package-publishing.md))
+```bash
+npm run changeset
+```
+
+🚧 TBD
