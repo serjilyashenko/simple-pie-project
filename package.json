@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "scripts": {
+    "dev": "turbo dev",
     "build": "turbo build",
     "build:packages": "turbo build --filter='./packages/*'",
     "changeset": "npx changeset",

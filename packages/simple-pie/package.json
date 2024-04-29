@@ -10,6 +10,7 @@
     "dist"
   ],
   "scripts": {
+    "dev": "rollup --config --watch",
     "build": "rm -rf dist && rollup --config",
     "npm:publish": "npm version patch && npm publish",
     "lint": "eslint src"

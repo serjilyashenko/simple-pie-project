@@ -64,4 +64,10 @@ Start releasing new npm package version (read more in [package-publishing.md](./
 npm run changeset
 ```
 
+## Development mode
+
+```bash
+npm run dev
+```
+
 🚧 TBD
