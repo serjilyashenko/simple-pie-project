@@ -47,27 +47,35 @@ npm ls --link=true --depth=0
 > ⚠️ After add/remove workspaces, or change their locations on the filesystem, it is necessary  to re-run the install-command
 > from root to set up workspaces again
 
-## Building
+## Commands
 
-Build all workspaces
+Build all workspaces:
 ```bash
 npm run build
 ```
 
-Build all package workspaces (used by ci workflow read more in [package-publishing.md](./package-publishing.md))
+Run all workspaces in dev mode:
+```bash
+npm run dev
+```
+
+Correct build order is handled by [Turborepo](https://turbo.build/repo).
+
+```mermaid
+flowchart TD
+    SP[packages/simple-pie] --> RSP(packages/react-simple-pie)
+    SP --> HL[apps/homepage-legacy]
+    RSP --> HL
+```
+
+Build all package workspaces (used by ci workflow read more in [package-publishing.md](./package-publishing.md)):
 ```bash
 npm run build:packages
 ```
 
-Start releasing new npm package version (read more in [package-publishing.md](./package-publishing.md))
+Start releasing new npm package version (read more in [package-publishing.md](./package-publishing.md)):
 ```bash
 npm run changeset
-```
-
-## Development mode
-
-```bash
-npm run dev
 ```
 
 🚧 TBD
