@@ -1,5 +1,8 @@
 # Package publishing
 
+The publishing is applied to the next packages:
+
+
 ## Versioning
 
 The version is composed of three numbers: `major.minor.patch` . The version is incremented according to the following rules:

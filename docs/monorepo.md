@@ -15,11 +15,25 @@ The monorepo is split into `apps` and `packages`.
 simple-pie-project
 ├─ docs
 ├─ apps
-│  └─ homepage
+│  └─ homepage-legacy
 └─ packages
    ├─ pie-math
    ├─ simple-pie
    └─ react-simple-pie
+```
+
+`packages/pie-math` includes all calculations (business logic).\
+`packages/simple-pie` and `packages/react-simple-pie` are external and are published to npm.
+They don't include any calculations and they are just "transport" packages (read more in [package-publishing.md](./package-publishing.md)).
+
+```mermaid
+flowchart TD
+  PM[packages/pie-math] --> SP[packages/simple-pie]
+  PM[packages/pie-math] --> RSP[packages/react-simple-pie]
+  SP --> HL[apps/homepage-legacy]
+  RSP --> HL
+  SP -.-> NPM[npm]
+  RSP -.-> NPM
 ```
 
 ## Tools
@@ -62,10 +76,11 @@ npm run dev
 Correct build order is handled by [Turborepo](https://turbo.build/repo).
 
 ```mermaid
-flowchart TD
-    SP[packages/simple-pie] --> RSP(packages/react-simple-pie)
-    SP --> HL[apps/homepage-legacy]
-    RSP --> HL
+flowchart LR
+  PM[packages/pie-math] --> SP[packages/simple-pie]
+  PM[packages/pie-math] --> RSP[packages/react-simple-pie]
+  SP --> HL[apps/homepage-legacy]
+  RSP --> HL
 ```
 
 Build all package workspaces (used by ci workflow read more in [package-publishing.md](./package-publishing.md)):
