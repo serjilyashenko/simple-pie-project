@@ -1,0 +1,11 @@
+{
+  "name": "pie-math",
+  "version": "0.0.1",
+  "main": "./src/index.ts",
+  "scripts": {
+    "type-check": "tsc"
+  },
+  "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
+  "repository": "https://github.com/serjilyashenko/simple-pie-project",
+  "license": "MIT"
+}
