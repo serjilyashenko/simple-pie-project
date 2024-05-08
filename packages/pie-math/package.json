@@ -2,6 +2,7 @@
   "name": "pie-math",
   "version": "0.0.1",
   "main": "./src/index.ts",
+  "private": true,
   "scripts": {
     "type-check": "tsc"
   },
