@@ -3,24 +3,26 @@
   "version": "1.0.26",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram react component",
-  "main": "dist/index.min.cjs",
-  "module": "dist/index.min.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "rollup --config --watch",
-    "build": "rm -rf dist && rollup --config",
+    "dev": "npm run build -- --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
     "npm:publish": "npm version patch && npm publish",
+    "type-check": "tsc",
     "lint": "eslint src"
   },
   "dependencies": {
-    "simple-pie": "*"
+    "pie-math": "*"
   },
   "devDependencies": {
     "@types/react": "18.2.64",
-    "@types/react-dom": "18.2.21"
+    "@types/react-dom": "18.2.21",
+    "tsup": "8.0.2"
   },
   "peerDependencies": {
     "react": ">=15",

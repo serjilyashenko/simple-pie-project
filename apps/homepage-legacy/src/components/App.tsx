@@ -224,7 +224,6 @@ export function App(): JSX.Element {
       {/*<article>*/}
       {/*  <h2 className="title">Single Sector Test</h2>*/}
       {/*  <hr />*/}
-
       {/*  <div className="grid">*/}
       {/*    {[1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 26].map((value) => (*/}
       {/*      <>*/}

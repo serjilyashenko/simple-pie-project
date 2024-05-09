@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "scripts": {
+    "clean": "npm exec --workspaces -- rimraf node_modules && rimraf node_modules",
     "dev": "turbo dev",
     "build": "turbo build",
     "build:packages": "turbo build --filter='./packages/*'",
@@ -20,11 +21,9 @@
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
-    "@rollup/plugin-terser": "0.4.4",
     "eslint": "8.56.0",
     "prettier": "3.1.1",
-    "rollup": "4.9.1",
-    "rollup-plugin-typescript2": "0.31.2",
+    "rimraf": "5.0.5",
     "source-map-explorer": "2.5.3",
     "turbo": "1.13.2",
     "typescript": "5.3.3"

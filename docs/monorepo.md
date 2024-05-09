@@ -63,6 +63,11 @@ npm ls --link=true --depth=0
 
 ## Commands
 
+Remove all `node_modules`
+```bash
+npm run clean
+```
+
 Build all workspaces:
 ```bash
 npm run build

@@ -1,7 +1,5 @@
-import type { TSectorCoordinate } from "simple-pie";
-import { castValuesToAngles, defaultPalette } from "simple-pie";
+import { defaultPalette, buildDoughnutSectors } from "pie-math";
 import type { TDoughnutProps } from "./type";
-import { DoughnutSector } from "./DoughnutSector";
 
 export function SimpleDoughnut(props: TDoughnutProps): JSX.Element {
   const {
@@ -12,21 +10,12 @@ export function SimpleDoughnut(props: TDoughnutProps): JSX.Element {
     borderWidth = 1,
   } = props;
 
-  const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(values);
-
   return (
     <svg viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
       <g stroke={borderColor} strokeWidth={borderWidth} fill="transparent">
-        {angleCoordinates.map(
-          (coordinate: TSectorCoordinate, index: number): JSX.Element => (
-            <DoughnutSector
-              key={index}
-              coordinate={coordinate}
-              color={palette[index]}
-              innerRadius={innerRadius}
-            />
-          ),
-        )}
+        {buildDoughnutSectors(values, innerRadius).map((d, index) => (
+          <path key={index} fill={palette[index % palette.length]} d={d} />
+        ))}
       </g>
     </svg>
   );

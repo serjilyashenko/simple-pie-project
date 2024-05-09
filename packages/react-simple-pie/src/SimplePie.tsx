@@ -1,7 +1,5 @@
-import { castValuesToAngles, defaultPalette } from "simple-pie";
-import type { TSectorCoordinate } from "simple-pie";
-import { Sector } from "./Sector";
 import type { TPieProps } from "./type";
+import { defaultPalette, buildPieSectors } from "pie-math";
 
 export function SimplePie(props: TPieProps): JSX.Element {
   const {
@@ -11,20 +9,12 @@ export function SimplePie(props: TPieProps): JSX.Element {
     borderWidth = 1,
   } = props;
 
-  const angleCoordinates: TSectorCoordinate[] = castValuesToAngles(values);
-
   return (
     <svg viewBox="-5 -5 110 110" xmlns="http://www.w3.org/2000/svg">
       <g stroke={borderColor} strokeWidth={borderWidth} fill="transparent">
-        {angleCoordinates.map(
-          (coordinate: TSectorCoordinate, index: number): JSX.Element => (
-            <Sector
-              key={index}
-              coordinate={coordinate}
-              color={palette[index]}
-            />
-          ),
-        )}
+        {buildPieSectors(values).map((d, index) => (
+          <path key={index} fill={palette[index % palette.length]} d={d} />
+        ))}
       </g>
     </svg>
   );

@@ -34,7 +34,7 @@ export function pieSectorPathDFactory(coordinate: TSectorCoordinate): string {
 
 export function doughnutSectorPathDFactory(
   coordinate: TSectorCoordinate,
-  inner = 0.5,
+  inner: number,
 ): string {
   const [radAngle0, radAngleDiff] = coordinate;
   const innerRadius = radius * inner;

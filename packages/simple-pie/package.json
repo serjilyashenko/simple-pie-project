@@ -3,17 +3,24 @@
   "version": "1.2.6",
   "private": false,
   "description": "Super light weight and super simple svg pie diagram",
-  "main": "./dist/simple-pie.min.cjs",
-  "module": "./dist/simple-pie.min.js",
-  "types": "./dist/simple-pie.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "dev": "rollup --config --watch",
-    "build": "rm -rf dist && rollup --config",
+    "dev": "npm run build -- --watch",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
     "npm:publish": "npm version patch && npm publish",
+    "type-check": "tsc",
     "lint": "eslint src"
+  },
+  "dependencies": {
+    "pie-math": "*"
+  },
+  "devDependencies": {
+    "tsup": "8.0.2"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
   "keywords": [

@@ -1,5 +1,3 @@
-export type TSectorCoordinate = [number, number];
-
 export type TPieOptions = {
   pallet?: string[];
   borderColor?: string;

@@ -1,5 +1,4 @@
-import { Sector } from "./Sector";
-import { SimplePie } from "./SimplePie";
-import { SimpleDoughnut } from "./SimpleDoughnut";
+export type { TPieProps, TDoughnutProps } from "./type";
 
-export { Sector, SimplePie, SimpleDoughnut };
+export { SimplePie } from "./SimplePie";
+export { SimpleDoughnut } from "./SimpleDoughnut";
