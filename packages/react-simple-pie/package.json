@@ -16,12 +16,10 @@
     "type-check": "tsc",
     "lint": "eslint src"
   },
-  "dependencies": {
-    "pie-math": "*"
-  },
   "devDependencies": {
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
+    "pie-math": "*",
     "tsup": "8.0.2"
   },
   "peerDependencies": {

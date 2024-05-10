@@ -16,10 +16,8 @@
     "type-check": "tsc",
     "lint": "eslint src"
   },
-  "dependencies": {
-    "pie-math": "*"
-  },
   "devDependencies": {
+    "pie-math": "*",
     "tsup": "8.0.2"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
