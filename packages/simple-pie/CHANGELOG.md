@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.2
+
+### Patch Changes
+
+- 0ddef21: Update README file
+
 ## 1.3.1
 
 ### Patch Changes
