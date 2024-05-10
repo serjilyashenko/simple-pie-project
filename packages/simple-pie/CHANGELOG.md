@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.3
+
+### Patch Changes
+
+- 0091ef1: README update
+
 ## 1.3.2
 
 ### Patch Changes
