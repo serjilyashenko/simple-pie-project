@@ -1,5 +1,12 @@
 # simple-pie
 
+## 1.3.0
+
+### Minor Changes
+
+- 3c5425c: - migrate from rollup to tsup
+  - use core pie-math internall package
+
 ## 1.2.6
 
 ### Patch Changes
