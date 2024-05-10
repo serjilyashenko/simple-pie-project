@@ -2,6 +2,13 @@
 
 The publishing is applied to the next packages:
 
+- `packages/simple-pie`
+- `packages/react-simple-pie`
+
+## Building
+
+[tsup](https://tsup.egoist.dev) is used for package building.\
+[module-systems](./module-systems.md)
 
 ## Versioning
 

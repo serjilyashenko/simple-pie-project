@@ -5,11 +5,11 @@
 
 <hr/>
 
-| project           | badges                                                                                                                                     |
-|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| homepage          | [![homepage-legacy Netlify deploy](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml/badge.svg?branch=master)](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml) |
-| simple-pie        | ![NPM Version](https://img.shields.io/npm/v/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/simple-pie) |
-| react-simple-pie  | ![NPM Version](https://img.shields.io/npm/v/react-simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/react-simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/react-simple-pie) |
+| project                                                   | badges                                                                                                                                     |
+|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| [homepage](https://simple-pie.netlify.app/)               | [![homepage-legacy Netlify deploy](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml/badge.svg?branch=master)](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml) |
+| [simple-pie](./packages/simple-pie/README.md)             | ![NPM Version](https://img.shields.io/npm/v/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/simple-pie) |
+| [react-simple-pie](./packages/react-simple-pie/README.md) | ![NPM Version](https://img.shields.io/npm/v/react-simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/react-simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/react-simple-pie) |
 
 ## Overview
 
@@ -30,79 +30,80 @@ map or any other case, when you can't use data-visualization libraries.
 
 ![net and map cases](./docs/images/map-and-net-case.png)
 
-## Packages
+## Monorepo
 
-The project includes two npm packages:
+Simple-pie project is utilising a monorepo for a development and deployment. Read moer in [monorepo.md](./docs/monorepo.md)
 
-* [Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie)
-* [React Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie)
+```tree
+simple-pie-project
+├─ docs
+├─ apps
+│  └─ homepage-legacy
+└─ packages
+   ├─ pie-math
+   ├─ simple-pie
+   └─ react-simple-pie
+```
 
-You can find them in the `/src/packages` folder. If you want to use diagram package or check it out, please look [this](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie), and [that](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/react-simple-pie) (for the react wrapper).
+## Installing packages
 
-Meanwhile, the current project is for simple-pie and react-simple-pie development and their demo.\
-Initially `simple-pie-project` imports the last versions of `simple-pie` and `react-simple-pie` packages. And it serves to demo both pie packages.
-
-## Demo
-
+1. Make sure you're in the root directory of the monorepo.
+2. Run the installation command:
 ```bash
-  npm install
-  npm dev
+npm install
 ```
 
-## `simple-pie` development
-
-Comment npm package import\
-And uncomment local `src/packages/simple-pie` import in `src/components/App.tsx` file. Like this:
-
-```ts
-// import {simplePie, simpleDoughnut} from "simple-pie";
-import {simplePie, simpleDoughnut} from "../packages/simple-pie/src/simple-pie";
-```
-
-Now it is possible to change `simple-pie` sources in `/src/packages/src`.
-
-**Important:** After development, it is important to return comments of imports back and check if it works fine with real published package.
-
-## `react-simple-pie` development
-
-**Tradeoff:** `react-simple-pie` has `simple-pie` as dependency. Thus, it is necessary to deploy `simple-pie` version
-before `react-simple-pie` can use this changes during development.
-
-**Note** There is no need to `npm install` in react-simple-pie folder. It takes the dependencies from `simple-pie-project`
-node_modules.
-
-Comment npm package import\
-And uncomment local `src/packages/simple-pie` import in `src/components/App.tsx` file. Like this:
-
-```ts
-// import {SimplePie, SimpleDoughnut} from "react-simple-pie"
-import { SimplePie, SimpleDoughnut } from "../packages/react-simple-pie/src";
-```
-
-Now it is possible to change `simple-pie` sources in `/src/packages/src`.
-
-**Important:** After development, it is important to return comments of imports back and check if it works fine with real published package.
-
-## `simple-pie` npm package publish
-
+Workspaces are [symlinked](https://en.wikipedia.org/wiki/Symbolic_link) into `node_modules`.
+To check symlink state run the command:
 ```bash
-cd src/packages/simple-pie
+npm ls --link=true --depth=0
+```
+
+> ⚠️ After add/remove workspaces, or change their locations on the filesystem, it is necessary  to re-run the install-command
+> from root to set up workspaces again
+
+## Scripts
+
+Remove all `node_modules`
+```bash
+npm run clean
+```
+
+Build all workspaces:
+```bash
 npm run build
-npm run npm:publish
 ```
 
-**Important:** After publishing it is necessary to update versions in `package.json` and `/src/packages/react-simple-pie/package.json`
-
-## `react-simple-pie` npm package publish
-
+Run all workspaces in dev mode:
 ```bash
-cd src/packages/react-simple-pie
-npm run build
-npm run npm:publish
+npm run dev
 ```
 
-**Important:** After publishing it is necessary to update versions in `package.json`
+Correct build order is handled by [Turborepo](https://turbo.build/repo).
 
-### Note for myself
-I created two `pathFactories` instead of one. To keep simplicity of pie diagram.
-However, obvious `doughnutPathFactory` can be used to build pie with 0 inner radius
+```mermaid
+flowchart LR
+  PM[packages/pie-math] --> SP[packages/simple-pie]
+  PM[packages/pie-math] --> RSP[packages/react-simple-pie]
+  SP --> HL[apps/homepage-legacy]
+  RSP --> HL
+```
+
+Build all package workspaces (used by ci workflow read more in [package-publishing.md](./docs/package-publishing.md)):
+```bash
+npm run build:packages
+```
+
+Start releasing new npm package version (read more in [package-publishing.md](./docs/package-publishing.md)):
+```bash
+npm run changeset
+```
+
+## More readings
+
+- [motivation](./docs/motivation.md)
+- [monorepo](./docs/monorepo.md)
+- [contributing](./docs/contributing.md)
+- [package-publishing](./docs/package-publishing.md)
+  - [module-systems](./docs/module-systems.md)
+- [deploy](./docs/deploy.md)
