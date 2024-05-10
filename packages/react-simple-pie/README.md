@@ -4,13 +4,16 @@
 </div>
 <hr/>
 
+![NPM Version](https://img.shields.io/npm/v/react-simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/react-simple-pie)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/min/react-simple-pie)
 
 
 This project creates simple svg pie and doughnut charts for infographics like graphs and others.
 
-**Note:** If you are going to use simple diagram in not react project, please check [Simple Pie](https://github.com/serjilyashenko/react-simple-pie/tree/master/src/packages/simple-pie) out.
-`simple-pie` and `react-simple-pie` packages are parts of the [Simple Pie Project](https://github.com/serjilyashenko/simple-pie-project) repo
+> If you are going to use simple diagram in not react project, please check [simple-pie](https://github.com/serjilyashenko/simple-pie-project/tree/master/packages/simple-pie) out.
+
+> `simple-pie` and `react-simple-pie` packages are parts of the [simple-pie-project](https://github.com/serjilyashenko/simple-pie-project) repo
 
 Check out the demo [here](https://simple-pie.netlify.app/)
 
@@ -25,7 +28,7 @@ And for obvious reasons it is not possible to use HighCharts, Chart.js or other 
 Well the `simple-pie` does exactly this thing. It generates tiny svg pie which can be integrated into network graph or
 map or any other case, when you can't use data-visualization libraries.
 
-![net and map cases](https://raw.githubusercontent.com/serjilyashenko/simple-pie-project/master/public/map-and-net-case.png)
+![net and map cases](https://raw.githubusercontent.com/serjilyashenko/simple-pie-project/master/docs/images/map-and-net-case.png)
 
 
 ## Installation
@@ -58,9 +61,7 @@ export default function YourComponent() {
 }
 ```
 
-Since `simplePie` and `simpleDoughnut` return regular svg, you can use it as you wish.
-
-**Note:** svg `height` and `width` are `100%`, so it trys to extend itself to available space. Thus, you should have wrapper with dimensions for your simple-pie diagram.
+> ⚠️ The svg `height` and `width` are `100%`, so it trys to extend itself to available space. Thus, you should have wrapper with dimensions for your simple-pie diagram.
 
 ## Interface
 
@@ -76,3 +77,7 @@ export type TDoughnutProps = TPieProps & {
   innerRadius?: number; // 0..1 - percent from outer radius
 };
 ```
+
+### Feedback
+
+[rower_stats0g@icloud.com](mailto:rower_stats0g@icloud.com)

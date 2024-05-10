@@ -12,9 +12,9 @@
 
 This project creates simple svg pie and doughnut charts for infographics like graphs and others.
 
-> If you are going to use simple diagram in react project, please check [react-simple-pie](https://github.com/serjilyashenko/simple-pie-project/blob/afafff7c8eebb4a0772f71ffee49d09e8e08dcf1/packages/react-simple-pie/README.md) out.
+> If you are going to use simple diagram in react project, please check [react-simple-pie](https://github.com/serjilyashenko/simple-pie-project/tree/master/packages/react-simple-pie) out.
 
-> `simple-pie` and `react-simple-pie` packages are parts of the [simple-pie-project](https://github.com/serjilyashenko/simple-pie-project/blob/afafff7c8eebb4a0772f71ffee49d09e8e08dcf1/README.md) monorepo.
+> `simple-pie` and `react-simple-pie` packages are parts of the [simple-pie-project](https://github.com/serjilyashenko/simple-pie-project) monorepo.
 
 Check out the demo [here](https://simple-pie.netlify.app/)
 
@@ -110,3 +110,7 @@ export function simplePie(
 ```
 
 `simpleDoughnut` has only new version of the interface
+
+### Feedback
+
+[rower_stats0g@icloud.com](mailto:rower_stats0g@icloud.com)
