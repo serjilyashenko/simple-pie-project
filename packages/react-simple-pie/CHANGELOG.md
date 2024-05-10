@@ -1,5 +1,11 @@
 # react-simple-pie
 
+## 1.1.2
+
+### Patch Changes
+
+- dc95227: update README
+
 ## 1.1.1
 
 ### Patch Changes
