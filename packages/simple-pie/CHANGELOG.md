@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.4
+
+### Patch Changes
+
+- dc95227: update README
+
 ## 1.3.3
 
 ### Patch Changes
