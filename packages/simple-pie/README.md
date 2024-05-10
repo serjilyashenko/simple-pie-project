@@ -5,7 +5,10 @@
 
 <hr/>
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/simple-pie)
+![NPM Version](https://img.shields.io/npm/v/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/simple-pie)
+
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie)
 
 This project creates simple svg pie and doughnut charts for infographics like graphs and others.
 
