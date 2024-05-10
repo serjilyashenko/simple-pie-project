@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.1
+
+### Patch Changes
+
+- d1c164b: fix dependency bug npm ERR! No versions available for pie-math"
+
 ## 1.3.0
 
 ### Minor Changes
