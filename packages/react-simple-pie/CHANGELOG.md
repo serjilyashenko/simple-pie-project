@@ -1,5 +1,11 @@
 # react-simple-pie
 
+## 1.1.1
+
+### Patch Changes
+
+- d1c164b: fix dependency bug npm ERR! No versions available for pie-math"
+
 ## 1.1.0
 
 ### Minor Changes
