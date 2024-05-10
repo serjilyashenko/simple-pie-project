@@ -16,7 +16,6 @@
     "changeset": "npx changeset",
     "release": "changeset publish",
     "prettier": "prettier --write .",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "postinstall": "turbo telemetry disable"
   },
   "devDependencies": {
@@ -24,7 +23,6 @@
     "eslint": "8.56.0",
     "prettier": "3.1.1",
     "rimraf": "5.0.5",
-    "source-map-explorer": "2.5.3",
     "turbo": "1.13.2",
     "typescript": "5.3.3"
   },
