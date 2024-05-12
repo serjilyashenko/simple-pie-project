@@ -23,4 +23,10 @@ Some common ones are:
 
 ## Linting
 
-🚧TBD
+TypeScript can be used in one of two ways - as a linter, or as a build tool.
+`noEmit` prevents emitting files. So, TS is used to check source code's types.
+
+`config` folder contains reusable `tsconfig.package.json`.\
+`apps/hompage-legacy` has its own tsconfig
+
+🚧 TBD

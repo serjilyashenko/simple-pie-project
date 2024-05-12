@@ -1,6 +1,6 @@
 # Package publishing
 
-The publishing is applied to the next packages:
+The publishing is applied to external packages. The next ones:
 
 - `packages/simple-pie`
 - `packages/react-simple-pie`

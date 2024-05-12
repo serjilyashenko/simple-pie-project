@@ -42,7 +42,8 @@ simple-pie-project
 └─ packages
    ├─ pie-math
    ├─ simple-pie
-   └─ react-simple-pie
+   ├─ react-simple-pie
+   └─ tsconfig
 ```
 
 ## Installing packages

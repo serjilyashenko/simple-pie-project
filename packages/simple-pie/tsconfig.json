@@ -1,15 +1,5 @@
 {
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "preserveWatchOutput": true,
-    "skipLibCheck": true,
-    "noEmit": true,
-    "strict": true
-  },
+  "extends": "../../config/tsconfig.package.json",
   "include": ["src"],
   "exclude": ["node_modules"]
 }

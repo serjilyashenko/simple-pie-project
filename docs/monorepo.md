@@ -17,6 +17,7 @@ The monorepo is split into `apps` and `packages`.
 
 ```tree
 simple-pie-project
+├─ config
 ├─ docs
 ├─ apps
 │  └─ homepage-legacy
@@ -32,10 +33,10 @@ They don't include any calculations and they are just "transport" packages (read
 
 ```mermaid
 flowchart TD
-  PM[packages/pie-math] --> SP[packages/simple-pie]
-  PM[packages/pie-math] --> RSP[packages/react-simple-pie]
-  SP --> HL[apps/homepage-legacy]
+  PM[packages/pie-math] --> SP
+  PM --> RSP[packages/react-simple-pie]
+  SP[packages/simple-pie] --> HL[apps/homepage-legacy]
   RSP --> HL
-  SP -.-> NPM[npm]
+  SP -.-> NPM([📦 npm])
   RSP -.-> NPM
 ```

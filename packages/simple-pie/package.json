@@ -12,9 +12,7 @@
   "scripts": {
     "dev": "npm run build -- --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts --minify",
-    "npm:publish": "npm version patch && npm publish",
-    "type-check": "tsc",
-    "lint": "eslint src"
+    "lint": "tsc"
   },
   "devDependencies": {
     "pie-math": "*",

@@ -4,7 +4,7 @@
   "main": "./src/index.ts",
   "private": true,
   "scripts": {
-    "type-check": "tsc"
+    "lint": "tsc"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
   "repository": "https://github.com/serjilyashenko/simple-pie-project",
