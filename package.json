@@ -27,14 +27,6 @@
     "turbo": "1.13.2",
     "typescript": "5.3.3"
   },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:react-hooks/recommended",
-      "plugin:@typescript-eslint/recommended"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

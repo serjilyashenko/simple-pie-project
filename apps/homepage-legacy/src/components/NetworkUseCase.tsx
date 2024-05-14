@@ -60,6 +60,7 @@ export const NetworkUseCase = memo(function NetworkUseCase(
       },
     ]);
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const edges = new DataSet([
       { from: 1, to: 2 },
@@ -83,8 +84,10 @@ export const NetworkUseCase = memo(function NetworkUseCase(
     };
     const options = {};
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     new Network(container, data, options);
+    // eslint-disable-next-line
   }, []);
 
   return <div id="network-container" className="network-container"></div>;
