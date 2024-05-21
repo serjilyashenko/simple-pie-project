@@ -4,7 +4,12 @@
   "main": "./src/index.ts",
   "private": true,
   "scripts": {
-    "lint": "tsc"
+    "lint": "tsc && eslint ./src/**/*"
+  },
+  "devDependencies": {
+    "eslint": "9.2.0",
+    "typescript": "5.3.3",
+    "typescript-eslint": "8.0.0-alpha.10"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
   "repository": "https://github.com/serjilyashenko/simple-pie-project",
