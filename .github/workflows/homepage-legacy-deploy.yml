@@ -34,7 +34,7 @@ jobs:
         run: npm ci
 
       - name: Lint and test
-        run: echo "TBD" # FIXME: add linting and tests
+        run: npm run lint
 
       - name: Build
         run: npm run build
