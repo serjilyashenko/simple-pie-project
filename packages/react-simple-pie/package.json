@@ -18,7 +18,8 @@
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
     "pie-math": "*",
-    "tsup": "8.0.2"
+    "tsup": "8.0.2",
+    "typescript": "5.3.3"
   },
   "peerDependencies": {
     "react": ">=15",

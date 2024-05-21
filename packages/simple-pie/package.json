@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "pie-math": "*",
-    "tsup": "8.0.2"
+    "tsup": "8.0.2",
+    "typescript": "5.3.3"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
   "keywords": [
