@@ -12,12 +12,15 @@
   "scripts": {
     "dev": "npm run build -- --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts --minify",
-    "lint": "tsc"
+    "lint": "tsc && eslint ./src/**/*"
   },
   "devDependencies": {
+    "globals": "15.3.0",
+    "eslint": "9.2.0",
     "pie-math": "*",
     "tsup": "8.0.2",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "typescript-eslint": "8.0.0-alpha.10"
   },
   "author": "Serge Iyashenko <serj.ilyashenko@gmail.com>",
   "keywords": [
