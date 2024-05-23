@@ -12,14 +12,16 @@
   "scripts": {
     "dev": "npm run build -- --watch",
     "build": "tsup src/index.ts --format cjs,esm --dts --minify",
-    "lint": "tsc"
+    "lint": "tsc && eslint ./src/**/*"
   },
   "devDependencies": {
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
+    "eslint": "9.2.0",
     "pie-math": "*",
     "tsup": "8.0.2",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "typescript-eslint": "8.0.0-alpha.10"
   },
   "peerDependencies": {
     "react": ">=15",
