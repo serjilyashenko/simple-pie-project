@@ -49,7 +49,31 @@ import {simplePie, simpleDoughnut} from "simple-pie";
 
 const svgPie = simplePie([2, 1, 1, 2]);
 const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
+
+document.body.appendChild(svgPie);
+document.body.appendChild(svgDoughnut);
 ```
+As data-uri image:
+```js
+import {simplePie} from "simple-pie";
+
+const element = simplePie([2, 1, 1, 2]);
+element.setAttribute("width", "70");
+element.setAttribute("height", "70");
+
+const svg = new XMLSerializer().serializeToString(element);
+const dataUri = `data:image/svg+xml;base64,${btoa(svg)}`;
+
+// Example for vis-network diagram
+const nodes = new DataSet([{
+  id: 1,
+  shape: "image",
+  image: dataUri,
+  shapeProperties: { useImageSize: true },
+},
+...
+```
+
 HTML page:
 > Download `simple-pie.min.js` file [here](https://simple-pie.netlify.app/simple-pie.min.js)
 ```html
