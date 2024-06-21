@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.6
+
+### Patch Changes
+
+- b360a88: Bug fix: Doughnut inner option ignored (https://github.com/serjilyashenko/simple-pie-project/issues/11)
+
 ## 1.3.5
 
 ### Patch Changes
