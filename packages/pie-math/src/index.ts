@@ -13,7 +13,7 @@ export function buildPieSectors(values: Array<number>): Array<string> {
 
 export function buildDoughnutSectors(
   values: Array<number>,
-  inner: number = 0.5,
+  inner: number,
 ): Array<string> {
   const angleCoordinates: Array<TSectorCoordinate> = castValuesToAngles(values);
 

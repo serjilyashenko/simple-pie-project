@@ -88,10 +88,13 @@ export function simpleDoughnutElement(
   options: TDoughnutOptions = {},
 ): SVGElement {
   const resultOptions = { ...defaultDoughnutOptions, ...options };
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { inner, ...pieOptions } = resultOptions;
 
-  return _buildSvgElement(buildDoughnutSectors, values, pieOptions);
+  return _buildSvgElement(
+    (_values) => buildDoughnutSectors(_values, inner),
+    values,
+    pieOptions,
+  );
 }
 
 export const simplePie = simplePieElement;
