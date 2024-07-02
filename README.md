@@ -25,14 +25,13 @@ So, it is not very nice idea to keep a bunch of png or svg files for every case 
 And for obvious reasons it is not possible to use HighCharts, Chart.js or other data visualization library.
 (Perhaps it would work with d3, but I'm not sure, it is an overkill to keep such big library for the such small purpose)
 
-Well the `simple-pie` does exactly this thing. It generates tiny svg pie which can be integrated into network graph or
-map or any other case, when you can't use data-visualization libraries.
+Well the `simple-pie` does exactly this thing. It generates the smallest possible SVG pie diagrams that can be integrated into network graphs, maps, or any other cases that can't accept heavy diagram solutions like Highcharts or even D3.
 
 ![net and map cases](./docs/images/map-and-net-case.png)
 
 ## Monorepo
 
-Simple-pie project is utilising a monorepo for a development and deployment. Read moer in [monorepo.md](./docs/monorepo.md)
+Simple-pie project is utilising a monorepo for a development and deployment. Read more in [monorepo.md](./docs/monorepo.md)
 
 ```tree
 simple-pie-project
