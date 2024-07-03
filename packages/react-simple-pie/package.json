@@ -30,9 +30,16 @@
   "author": "Serge Ilyashenko <serj.ilyashenko@gmail.com>",
   "keywords": [
     "svg",
+    "svg chart",
+    "chart",
     "diagram",
     "pie",
-    "pie-chart"
+    "pie-chart",
+    "doughnut",
+    "doughnut chart",
+    "lightweight",
+    "typescript",
+    "react"
   ],
   "repository": "https://github.com/serjilyashenko/simple-pie-project",
   "license": "MIT"
