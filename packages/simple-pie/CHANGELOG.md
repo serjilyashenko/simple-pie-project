@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.7
+
+### Patch Changes
+
+- 9f05d4f: npm package keywords update
+
 ## 1.3.6
 
 ### Patch Changes

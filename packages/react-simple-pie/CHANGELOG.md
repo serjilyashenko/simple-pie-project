@@ -1,5 +1,11 @@
 # react-simple-pie
 
+## 1.1.3
+
+### Patch Changes
+
+- 9f05d4f: npm package keywords update
+
 ## 1.1.2
 
 ### Patch Changes
