@@ -7,7 +7,8 @@ export default defineConfig({
     starlight({
       title: "Simple Pie",
       logo: {
-        src: './src/assets/logo-light.svg',
+        light: './src/assets/logo-light.svg',
+        dark: './src/assets/logo-dark.svg',
         replacesTitle: true,
       },
       social: {
