@@ -14,6 +14,14 @@ export default defineConfig({
             href: "/favicon.ico",
             sizes: "32x32"
           }
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            href: "/icon.svg",
+            type: "image/svg+xml"
+          }
         }
       ],
       logo: {
