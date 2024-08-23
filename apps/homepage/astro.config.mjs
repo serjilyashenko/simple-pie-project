@@ -10,6 +10,13 @@ export default defineConfig({
         {
           tag: "link",
           attrs: {
+            rel: "manifest",
+            href: "/manifest.webmanifest",
+          }
+        },
+        {
+          tag: "link",
+          attrs: {
             rel: "icon",
             href: "/favicon.ico",
             sizes: "32x32"
@@ -21,6 +28,13 @@ export default defineConfig({
             rel: "icon",
             href: "/icon.svg",
             type: "image/svg+xml"
+          }
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "apple-touch-icon",
+            href: "/apple-touch-icon.png",
           }
         }
       ],
