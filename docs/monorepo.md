@@ -20,6 +20,7 @@ simple-pie-project
 ├─ config
 ├─ docs
 ├─ apps
+│  ├─ homepage
 │  └─ homepage-legacy
 └─ packages
    ├─ pie-math

@@ -1,0 +1,50 @@
+name: homepage-deploy
+run-name: deploy homepage to netlify 🚀
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/homepage-deploy.yml
+#      - packages/**/* FIXME: do we need to watch packages ?
+      - apps/homepage/**/*
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  hompage-deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Netlify
+        run: npm install -g netlify-cli@17.22.1
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint and test
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Netlify
+        id: netlify_deploy
+        run: |
+          netlify deploy \
+            --prod \
+            --dir apps/homepage/dist \
+            --site ${{ secrets.NETLIFY_SIMPLE_PIE_2_SITE_ID }} \
+            --auth ${{ secrets.NETLIFY_TOKEN }} \
+            --filter homepage \

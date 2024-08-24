@@ -1,7 +1,6 @@
 # Deploy
 
-`homepage-legacy-deploy` is github-actions workflow. It deploys the legacy homepage
-project to [Netlify](https://www.netlify.com).
+`homepage` and `homepage-legacy-deploy` are github-actions workflows. They deploy the projects to [Netlify](https://www.netlify.com).
 
 The flow is inspired by [Raul Melo's article](https://www.raulmelo.me/en/blog/deploying-netlify-github-actions-guide).
 

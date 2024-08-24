@@ -5,11 +5,12 @@
 
 <hr/>
 
-| project                                                   | badges                                                                                                                                     |
-|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [homepage](https://simple-pie.netlify.app/)               | [![homepage-legacy Netlify deploy](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml/badge.svg?branch=master)](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml) |
-| [simple-pie](./packages/simple-pie/README.md)             | ![NPM Version](https://img.shields.io/npm/v/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/simple-pie) |
+| project                                                   | badges                                                                                                                                                                                                                                                                                            |
+|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [homepage](https://simple-pie-2.netlify.app/) - 🚧WIP     | TBD                                                                                                                                                                                                                                                                                               |
+| [simple-pie](./packages/simple-pie/README.md)             | ![NPM Version](https://img.shields.io/npm/v/simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/simple-pie)                         |
 | [react-simple-pie](./packages/react-simple-pie/README.md) | ![NPM Version](https://img.shields.io/npm/v/react-simple-pie) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-simple-pie) <br/> ![npm bundle size](https://img.shields.io/bundlephobia/min/react-simple-pie) ![NPM Downloads](https://img.shields.io/npm/dm/react-simple-pie) |
+| [homepage-legacy](https://simple-pie.netlify.app/)        | [![homepage-legacy Netlify deploy](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml/badge.svg?branch=master)](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-legacy-deploy.yml)                                 |
 
 ## Overview
 
@@ -37,6 +38,7 @@ Simple-pie project is utilising a monorepo for a development and deployment. Rea
 simple-pie-project
 ├─ docs
 ├─ apps
+│  ├─ homepage
 │  └─ homepage-legacy
 └─ packages
    ├─ pie-math
