@@ -1,12 +1,14 @@
 # Motivation
 
-Some time ago I had to integrate a network graph. And the every node of the network graph would be tiny pie chart.
-The network graph library doesn't support anything else except png or svg as node inner content.
-So, it is not very nice idea to keep a bunch of png or svg files for every case of data distribution.
-And for obvious reasons it is not possible to use HighCharts, Chart.js or other data visualization library.
-(Perhaps it would work with d3, but I'm not sure, it is an overkill to keep such big library for the such small purpose)
+The idea for the `simple-pie` packages came from a need to add small pie charts to a network graph. The network graph
+library only supported `PNG` or `SVG` files for node content, making it impractical to store many pre-rendered images for
+different data sets.
 
-Well the `simple-pie` does exactly this thing. It generates tiny svg pie which can be integrated into network graph or
-map or any other case, when you can't use data-visualization libraries.
+Using popular charting libraries like `Highcharts` or `Chart.js` wasn't an option because they were too complex for this
+specific use case. Even though `D3.js` might have worked, it was still too large for such a simple need.
+
+That's where `simple-pie` comes in. It provides a straightforward solution for creating the smallest possible SVG pie and
+doughnut charts. These charts are perfect for embedding in network graphs, maps, or any application where you need
+a simple and efficient way to visualize data without the bulk of heavier libraries.
 
 ![net and map cases](https://raw.githubusercontent.com/serjilyashenko/simple-pie-project/master/docs/images/map-and-net-case.png)
