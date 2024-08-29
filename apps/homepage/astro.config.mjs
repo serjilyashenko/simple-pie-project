@@ -55,6 +55,18 @@ export default defineConfig({
           ]
         },
         {
+          label: "simple-pie",
+          items: [
+            { label: "Installation", slug: "simple-pie/installation" },
+          ]
+        },
+        {
+          label: "react-simple-pie",
+          items: [
+            { label: "Installation", slug: "react-simple-pie/installation" },
+          ]
+        },
+        {
           label: "Guides",
           items: [
             { label: "Example Guide", slug: "guides/example" }
