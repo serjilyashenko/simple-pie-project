@@ -51,19 +51,9 @@ export default defineConfig({
           label: "Getting Started",
           items: [
             // Each item here is one entry in the navigation menu.
-            { label: "Introduction", slug: "getting-started/introduction" }
-          ]
-        },
-        {
-          label: "simple-pie",
-          items: [
-            { label: "Installation", slug: "simple-pie/installation" },
-          ]
-        },
-        {
-          label: "react-simple-pie",
-          items: [
-            { label: "Installation", slug: "react-simple-pie/installation" },
+            { label: "Introduction", slug: "getting-started/introduction" },
+            { label: "simple-pie", slug: "getting-started/simple-pie" },
+            { label: "react-simple-pie", slug: "getting-started/react-simple-pie" }
           ]
         },
         {

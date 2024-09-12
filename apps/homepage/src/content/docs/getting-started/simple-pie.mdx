@@ -1,0 +1,126 @@
+---
+title: simple-pie
+description: How to install and use simple-pie npm package
+---
+import { Aside, Code, Tabs, TabItem } from '@astrojs/starlight/components';
+
+`simple-pie` creates simple svg pie and doughnut charts for infographics like graphs and others in browser environments.
+
+<Aside>
+  If you are going to use simple diagram in react project, please use [react-simple-pie](/getting-started/react-simple-pie).
+</Aside>
+
+## Installation
+
+<Tabs>
+  <TabItem label="npm" icon="seti:npm">
+    <Code code="npm install simple-pie --save" lang="bash" />
+  </TabItem>
+  <TabItem label="pnpm" icon="pnpm">
+    <Code code="pnpm add simple-pie" lang="bash" />
+  </TabItem>
+  <TabItem label="yarn" icon="seti:yarn">
+    <Code code="yarn add simple-pie" lang="bash" />
+  </TabItem>
+</Tabs>
+
+## Usage
+
+```js
+import {simplePie, simpleDoughnut} from "simple-pie";
+
+const svgPie = simplePie([2, 1, 1, 2]);
+const svgDoughnut = simpleDoughnut([2, 1, 1, 2]);
+
+document.body.appendChild(svgPie);
+document.body.appendChild(svgDoughnut);
+```
+
+<Aside type="tip">
+  The svg `height` and `width` are `100%`, so it trys to extend itself to available space.
+  Thus, you should have wrapper with dimensions for your simple-pie diagram.
+
+  Or just add element attributes:
+  ```js
+  svgPie.setAttribute("width", "50");
+  svgPie.setAttribute("height", "50");
+  ```
+</Aside>
+
+## Interface
+
+```ts
+// Pie
+type TPieOptions = {
+  pallet?: string[];
+  borderColor?: string;
+  borderWidth?: number;
+};
+
+function simplePie(
+  values: number[],
+  options?: TPieOptions
+): SVGElement;
+
+// Doughnut
+type TDoughnutOptions = TPieOptions & {
+  inner?: number;                         // 0..1 - percent from outer radius
+};
+
+function simpleDoughnut(
+  values: number[],
+  options: TDoughnutOptions = {}
+): SVGElement
+```
+
+<Aside type="tip">
+  If you need borderless diagram, just set `borderColor: "transparent"` or `borderWidth: 0`
+</Aside>
+
+## Examples
+
+TBD
+
+## Guides
+
+### HTML page
+
+<Aside>
+  Download `simple-pie.min.js` file [here](https://simple-pie.netlify.app/simple-pie.min.js)
+</Aside>
+
+```html
+<div id="pie-container"></div>
+<div id="doughnut-container"></div>
+
+<script src="simple-pie.min.js"></script>
+<script>
+    const svgPieElement = simplePie([2, 1, 1, 2]);
+    document.getElementById('pie-container').appendChild(svgPieElement);
+
+    const svgDoughnutElement = simpleDoughnut([2, 1, 1, 2]);
+    document.getElementById('doughnut-container').appendChild(svgDoughnutElement);
+</script>
+```
+
+### As data-uri image
+
+```js
+import {simplePie} from "simple-pie";
+
+const element = simplePie([2, 1, 1, 2]);
+element.setAttribute("width", "70");
+element.setAttribute("height", "70");
+
+const svg = new XMLSerializer().serializeToString(element);
+const dataUri = `data:image/svg+xml;base64,${btoa(svg)}`;
+
+// Example for vis-network diagram
+const nodes = new DataSet([{
+  id: 1,
+  shape: "image",
+  image: dataUri,
+  shapeProperties: { useImageSize: true },
+},
+...
+```
