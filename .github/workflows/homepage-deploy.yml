@@ -7,7 +7,7 @@ on:
       - master
     paths:
       - .github/workflows/homepage-deploy.yml
-#      - packages/**/* FIXME: do we need to watch packages ?
+      - packages/simple-pie/**/*
       - apps/homepage/**/*
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}

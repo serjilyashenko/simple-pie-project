@@ -1,0 +1,109 @@
+---
+---
+
+<div id="network-container" class="network-container">hi</div>
+
+<script>
+  import { simplePie } from "simple-pie";
+  import { DataSet } from "vis-data";
+  import { Network } from "vis-network";
+  import "vis-network/styles/vis-network.css";
+
+  function getRandomPieDataUri() {
+    const values = Array.from({ length: Math.ceil(Math.random() * 10) }, () =>
+      Math.ceil(Math.random() * 10),
+    );
+    const element = simplePie(values);
+    element.setAttribute("width", "70");
+    element.setAttribute("height", "70");
+
+    const svg = new XMLSerializer().serializeToString(element);
+
+    return `data:image/svg+xml;base64,${btoa(svg)}`;
+  }
+
+  // @ts-ignore
+  const nodes = new DataSet([
+    {
+      id: 1,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+    },
+    {
+      id: 2,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+    },
+    {
+      id: 3,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+      label: "Pull me! I'm interactive!",
+    },
+    {
+      id: 4,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+    },
+    {
+      id: 5,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+    },
+    {
+      id: 6,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+    },
+    {
+      id: 7,
+      shape: "image",
+      image: getRandomPieDataUri(),
+      shapeProperties: { useImageSize: true },
+    },
+  ]);
+
+  // @ts-ignore
+  const edges = new DataSet([
+    { from: 1, to: 2 },
+    { from: 1, to: 3 },
+    { from: 2, to: 4 },
+    { from: 2, to: 5 },
+    { from: 6, to: 2 },
+    { from: 7, to: 2 },
+  ]);
+
+  // create a network
+  const container = document.getElementById("network-container");
+
+  if (!container) {
+    throw new Error("html container not found");
+  }
+
+  const data = {
+    nodes: nodes,
+    edges: edges,
+  };
+  const options = {};
+
+  // @ts-ignore
+  new Network(container, data, options);
+</script>
+
+<style>
+  .network-container {
+    height: 400px;
+    width: 100%;
+    border: 1px dashed darksalmon;
+  }
+
+  .network-container .vis-network:focus{
+    outline: none;
+  }
+</style>
