@@ -1,0 +1,30 @@
+---
+---
+
+<style is:global>
+  .pie {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+</style>
+
+<script>
+  import {simplePie, simpleDoughnut} from 'simple-pie';
+
+  Array.prototype.slice.call(document.querySelectorAll("[data-pie]"))
+    .filter(container => container instanceof HTMLElement && container.dataset)
+    .forEach(container => {
+      const {pie, options} = container.dataset;
+      const pieElement = simplePie(JSON.parse(pie), JSON.parse(options));
+      container.appendChild(pieElement);
+    });
+
+  Array.prototype.slice.call(document.querySelectorAll("[data-doughnut]"))
+    .filter(container => container instanceof HTMLElement && container.dataset)
+    .forEach(container => {
+      const {doughnut, options} = container.dataset;
+      const pieElement = simpleDoughnut(JSON.parse(doughnut), JSON.parse(options));
+      container.appendChild(pieElement);
+    });
+</script>
