@@ -1,51 +1,49 @@
 ---
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card } from '@astrojs/starlight/components';
 
 import './PieScript.astro';
 
-<CardGrid>
-  <Card>
-    <div class="pie"
-         data-pie={JSON.stringify([2, 1, 1, 2])}
-         data-options={JSON.stringify({})}
-    ></div>
-    ```js
-      simplePie([2, 1, 1, 2])
-    ```
-  </Card>
-  <Card>
-    <div class="pie"
-         data-pie={JSON.stringify([2, 1, 1, 2])}
-         data-options={JSON.stringify({ borderColor: "transparent" })}
-    ></div>
-    ```js
-      simplePie([2, 1, 1, 2], {
-        borderColor: "transparent"
-      })
-    ```
-  </Card>
-  <Card>
-    <div class="pie"
-         data-doughnut={JSON.stringify([2, 1, 1, 2])}
-         data-options={JSON.stringify({ borderWidth: 3 })}
-    ></div>
-    ```js
-      simpleDoughnut([2, 1, 1, 2], {
-        borderWidth: 3
-      })
-    ```
-  </Card>
-  <Card>
-    <div class="pie"
-         data-doughnut={JSON.stringify([2, 1, 1, 2])}
-         data-options={JSON.stringify({ borderColor: "transparent", inner: 0.3 })}
-    ></div>
-    ```js
-      simpleDoughnut([2, 1, 1, 2], {
-        borderColor: "transparent",
-        inner: 0.3,
-      })
-    ```
-  </Card>
-</CardGrid>
+<Card>
+  <div class="pie"
+       data-pie={JSON.stringify([2, 1, 1, 2])}
+       data-options={JSON.stringify({})}
+  ></div>
+  ```js
+    simplePie([2, 1, 1, 2])
+  ```
+</Card>
+<Card>
+  <div class="pie"
+       data-pie={JSON.stringify([2, 1, 1, 2])}
+       data-options={JSON.stringify({ borderColor: "transparent" })}
+  ></div>
+  ```js
+  simplePie([2, 1, 1, 2], {
+    borderColor: "transparent"
+  })
+  ```
+</Card>
+<Card>
+  <div class="pie"
+       data-doughnut={JSON.stringify([2, 1, 1, 2])}
+       data-options={JSON.stringify({ borderWidth: 3 })}
+  ></div>
+  ```js
+  simpleDoughnut([2, 1, 1, 2], {
+    borderWidth: 3
+  })
+  ```
+</Card>
+<Card>
+  <div class="pie"
+       data-doughnut={JSON.stringify([2, 1, 1, 2])}
+       data-options={JSON.stringify({ borderColor: "transparent", inner: 0.3 })}
+  ></div>
+  ```js
+  simpleDoughnut([2, 1, 1, 2], {
+    borderColor: "transparent",
+    inner: 0.3,
+  })
+  ```
+</Card>
