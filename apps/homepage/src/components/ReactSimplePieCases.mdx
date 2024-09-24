@@ -1,0 +1,47 @@
+---
+---
+import { Card } from '@astrojs/starlight/components';
+
+import './PieScript.astro';
+
+<Card>
+  <div class="pie"
+       data-pie={JSON.stringify([1, 2, 1, 2])}
+       data-options={JSON.stringify({})}
+  ></div>
+  ```js
+  <SimplePie values={[1, 2, 1, 2]} />
+  ```
+</Card>
+<Card>
+  <div class="pie"
+       data-pie={JSON.stringify([1, 1, 1])}
+       data-options={JSON.stringify({ borderWidth: 4 })}
+  ></div>
+  ```js
+  <SimplePie values={[1, 1, 1]} borderWidth={4} />
+  ```
+</Card>
+<Card>
+  <div class="pie"
+       data-doughnut={JSON.stringify([1, 2, 1, 2])}
+       data-options={JSON.stringify({})}
+  ></div>
+  ```js
+  <SimpleDoughnut values={[1, 2, 1, 2]} />
+  ```
+</Card>
+<Card>
+  <div class="pie"
+       data-doughnut={JSON.stringify([1, 1, 1])}
+       data-options={JSON.stringify({ borderWidth: 4, borderColor: "green", inner: 0.3 })}
+  ></div>
+  ```js
+  <SimpleDoughnut
+    values={[1, 1, 1]}
+    borderWidth={4}
+    borderColor="green"
+    innerRadius={0.3}
+  />
+  ```
+</Card>
