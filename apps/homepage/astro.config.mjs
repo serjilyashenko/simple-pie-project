@@ -57,16 +57,6 @@ export default defineConfig({
             { label: "react-simple-pie", slug: "getting-started/react-simple-pie" },
             { label: "Random Examples", slug: "getting-started/random-examples" }
           ]
-        },
-        {
-          label: "Guides",
-          items: [
-            { label: "Example Guide", slug: "guides/example" }
-          ]
-        },
-        {
-          label: "Reference",
-          autogenerate: { directory: "reference" }
         }
       ]
     })

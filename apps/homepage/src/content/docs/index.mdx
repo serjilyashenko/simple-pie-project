@@ -1,14 +1,14 @@
 ---
-title: WIP - Welcome to Simple Pie
-description: Get started building your docs site with Starlight.
+title: Welcome to Simple Pie
+description: Super light weight and super simple SVG pie/doughnut diagram packages documentation.
 template: doc
 hero:
-  tagline: WIP - Congrats on setting up a new Starlight project!
+  tagline: Super light weight and super simple <strong>SVG</strong> pie/doughnut diagrams
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Introduction
+      link: /getting-started/introduction/
       icon: right-arrow
       variant: primary
     - text: View on GitHub
@@ -18,19 +18,13 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
-
 <CardGrid>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="HTML" icon="seti:html">
+    Use in Web applications:<br/>
+    <a href="/getting-started/simple-pie">simple-pie</a>
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="React" icon="seti:react">
+		Use in React applications:<br/>
+    <a href="/getting-started/react-simple-pie">react-simple-pie</a>
 	</Card>
 </CardGrid>
