@@ -44,7 +44,8 @@ export default defineConfig({
         replacesTitle: true
       },
       social: {
-        github: "https://github.com/serjilyashenko/simple-pie-project"
+        github: "https://github.com/serjilyashenko/simple-pie-project",
+        email: "mailto:mailto:rower_stats0g@icloud.com?subject=SimplePieFeedback",
       },
       sidebar: [
         {
