@@ -29,4 +29,8 @@ TypeScript can be used in one of two ways - as a linter, or as a build tool.
 `config` folder contains reusable `tsconfig.package.json`.\
 `apps/hompage-legacy` has its own tsconfig
 
+## Single Sector Visual Test
+
+[https://simple-pie.netlify.app/test](https://simple-pie.netlify.app/test)
+
 🚧 TBD

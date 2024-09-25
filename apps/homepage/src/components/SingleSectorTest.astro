@@ -1,0 +1,27 @@
+---
+---
+
+<style>
+  .grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+</style>
+
+<div class="grid">
+  {[1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 26].map((value) => (
+    <div class="pie"
+         data-pie={JSON.stringify([value])}
+         data-options={JSON.stringify({})}
+    ></div>
+    <div class="pie"
+         data-doughnut={JSON.stringify([value])}
+         data-options={JSON.stringify({})}
+    ></div>
+  ))}
+</div>
+
+<script>
+  import "./PieScript.astro";
+</script>

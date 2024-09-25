@@ -1,0 +1,14 @@
+---
+title: Single Sector Visual Test
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import SingleSectorTest from '@components/SingleSectorTest.astro'
+
+<Aside type="tip">
+  The deal is if there is only one value in the data array, simple-pie draws circle or doughnut instead of sectors.
+  Before this solution it was buggy for some single values.
+  May be in future I'll write snapshot test for this. But now this section is to check if everything is fine
+</Aside>
+
+<SingleSectorTest />
