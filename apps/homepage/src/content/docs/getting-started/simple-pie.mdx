@@ -2,7 +2,8 @@
 title: simple-pie
 description: How to install and use simple-pie npm package
 ---
-import { Aside, Card, CardGrid, Code, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Aside, Code, Tabs, TabItem } from '@astrojs/starlight/components';
+import Network from '@components/Network.astro'
 
 `simple-pie` creates simple svg pie and doughnut charts for infographics like graphs and others in browser environments.
 
@@ -126,3 +127,9 @@ const nodes = new DataSet([{
 },
 ...
 ```
+
+<Aside type="tip">
+  The demo is interactive
+</Aside>
+
+<Network />
