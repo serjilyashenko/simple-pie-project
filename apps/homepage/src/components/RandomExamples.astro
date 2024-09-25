@@ -8,8 +8,8 @@ import "./PieScript.astro";
   Array.from({ length: Math.floor(Math.random() * 10 + 1) }, () =>
     Math.floor(Math.random() * 101)
     )
-  ).map(set => (
-    <Card>
+  ).map((set, index) => (
+    <Card title={index.toString()}>
       <div class="pie"
         data-doughnut={JSON.stringify(set)}
         data-options={JSON.stringify({borderColor: 'transparent'})}

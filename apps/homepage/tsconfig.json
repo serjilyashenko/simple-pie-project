@@ -7,5 +7,6 @@
       "@components/*": ["src/components/*"],
       "@content/*": ["src/content/*"]
     }
-  }
+  },
+  "exclude": ["dist"]
 }
