@@ -1,0 +1,22 @@
+---
+import { Card, Code } from "@astrojs/starlight/components";
+
+import "./PieScript.astro";
+---
+
+{Array.from({ length: 16 }, () =>
+  Array.from({ length: Math.floor(Math.random() * 10 + 1) }, () =>
+    Math.floor(Math.random() * 101)
+    )
+  ).map(set => (
+    <Card>
+      <div class="pie"
+        data-doughnut={JSON.stringify(set)}
+        data-options={JSON.stringify({borderColor: 'transparent'})}
+      ></div>
+      <Code
+        code={`<SimpleDoughnut\n  borderColor="transparent"\n  values={${JSON.stringify(set)}}\n/>`}
+        lang="js"
+      />
+    </Card>
+  ))}
