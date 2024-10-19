@@ -1,3 +1,3 @@
 # Simple Pie: Homepage-legacy
 
-Read [here](../../README.md)
+Read more [here](../../README.md)
