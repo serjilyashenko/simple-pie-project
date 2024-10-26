@@ -1,6 +1,7 @@
 import { simplePie, simpleDoughnut } from "simple-pie";
 import { SimplePie, SimpleDoughnut } from "react-simple-pie";
 import { NetworkUseCase } from "./NetworkUseCase.tsx";
+import { DeprecationBanner } from "./DeprecationBanner.tsx";
 import "./App.css";
 
 function getRandomPieDataUri() {
@@ -19,6 +20,7 @@ function getRandomPieDataUri() {
 export function App(): JSX.Element {
   return (
     <main className="app">
+      <DeprecationBanner />
       <article>
         <h2 className="title">
           Network Graph Demo

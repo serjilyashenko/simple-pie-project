@@ -1,0 +1,41 @@
+.banner__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.banner {
+  background-color: #E36F2C;
+  border-radius: 28px;
+  font-size: 28px;
+  padding: 8px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.banner h3 {
+  margin: 0;
+}
+
+.banner a {
+  white-space: nowrap;
+}
+
+.banner a:after {
+  position: absolute;
+  content: '';
+  inset: 0;
+}
+
+.banner__inner {
+  border-radius: 24px;
+  border: 8px solid black;
+  padding: 8px 16px 16px;
+  text-align: center;
+}
+
+.icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
