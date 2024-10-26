@@ -3,7 +3,7 @@
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 [![homepage Netlify deploy](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-deploy.yml/badge.svg?branch=master)](https://github.com/serjilyashenko/simple-pie-project/actions/workflows/homepage-deploy.yml)
 
-This is a hompage/documetation for the SimplePie project. The project is a part of a monorepo. Read more [here](../../README.md).
+This is a [hompage/documetation](https://simple-pie.netlify.app) for the SimplePie project. The project is a part of a monorepo. Read more [here](../../README.md).
 
 
 ## 🚀 Project Structure
