@@ -1,5 +1,11 @@
 # simple-pie
 
+## 1.3.8
+
+### Patch Changes
+
+- 8b561a4: Documentation update
+
 ## 1.3.7
 
 ### Patch Changes
