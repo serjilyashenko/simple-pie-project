@@ -12,11 +12,11 @@
 
 This project creates simple svg pie and doughnut charts for infographics like graphs and others.
 
+[Documentation](https://simple-pie.netlify.app/)
+
 > If you are going to use simple diagram in react project, please check [react-simple-pie](https://github.com/serjilyashenko/simple-pie-project/tree/master/packages/react-simple-pie) out.
 
 > `simple-pie` and `react-simple-pie` packages are parts of the [simple-pie-project](https://github.com/serjilyashenko/simple-pie-project) monorepo.
-
-Check out the demo [here](https://simple-pie.netlify.app/)
 
 ## Motivation
 
