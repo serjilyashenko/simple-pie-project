@@ -9,6 +9,13 @@ export default defineConfig({
       title: "Simple Pie",
       head: [
         {
+          tag: "meta",
+          attrs: {
+            name: 'description',
+            content: "Super light weight and super simple SVG pie/doughnut diagrams for web / react apps"
+          }
+        },
+        {
           tag: "link",
           attrs: {
             rel: "manifest",
