@@ -9,6 +9,7 @@ on:
       - .github/workflows/homepage-legacy-deploy.yml
       - packages/**/*
       - apps/homepage-legacy/**/*
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
