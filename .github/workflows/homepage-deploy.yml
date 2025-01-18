@@ -9,6 +9,7 @@ on:
       - .github/workflows/homepage-deploy.yml
       - packages/simple-pie/**/*
       - apps/homepage/**/*
+  workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
